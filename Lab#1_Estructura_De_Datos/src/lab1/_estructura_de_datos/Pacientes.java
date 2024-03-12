@@ -6,7 +6,7 @@ public class Pacientes {
     double cedula;
     String nombre,apellido,especialidadMedica,medicoAsignado;
     
-    public paciente(){
+    public Pacientes(){
         cedula = 0;
         nombre = "";
         apellido= "";
