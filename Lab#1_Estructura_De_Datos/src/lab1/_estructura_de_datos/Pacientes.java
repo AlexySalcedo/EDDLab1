@@ -3,10 +3,10 @@ package lab1._estructura_de_datos;
 
 
 public class Pacientes {
-    double cedula;
+    long cedula;
     String nombre,apellido,especialidadMedica,medicoAsignado, fecha;
     
-    public Pacientes(double ced, String nom, String ape, String esp, String med, String fec){
+    public Pacientes(long ced, String nom, String ape, String esp, String med, String fec){
         this.nombre = nom;
         this.apellido = ape;
         this.cedula = ced;
@@ -17,7 +17,7 @@ public class Pacientes {
     
     public Pacientes(String cad){
         String[] rest = cad.split("~");
-        this.cedula = (Double.parseDouble(rest[0].trim()));
+        this.cedula = (Long.parseLong(rest[0].trim()));
         this.nombre = (rest[1]);
         this.apellido =(rest[2]);
         this.especialidadMedica = (rest[3]);
@@ -25,11 +25,11 @@ public class Pacientes {
         this.fecha = (rest [5]);   
     }
     
-    public double getCedula() {
+    public long getCedula() {
         return cedula;
     }
 
-    public void setCedula(double cedula) {
+    public void setCedula(long cedula) {
         this.cedula = cedula;
     }
 

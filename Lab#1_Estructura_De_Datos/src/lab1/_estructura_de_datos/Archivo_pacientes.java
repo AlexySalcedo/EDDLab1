@@ -1,13 +1,16 @@
          
 package lab1._estructura_de_datos;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Archivo_pacientes {
     
@@ -36,7 +39,27 @@ public class Archivo_pacientes {
       }
   }
   
+  public void Eliminar(long c){
+      try{
+      File fr = new File("C:\\Temp\\ArchivoPacientes.txt");
+      FileWriter fw = new FileWriter(fr);
+      BufferedWriter bw = new BufferedWriter(fw);
+      List<String> l = new ArrayList<>();
+      l = Files.readAllLines(Paths.get(fr.getPath()));
+          for (String linea : l) {
+              Pacientes pac = new Pacientes(linea);
+              if (pac.getCedula() != c) {
+               bw.write(linea + "\n");
+              }
+          }
+      }
+      catch(Exception ex){
+          System.out.println(ex.getMessage());
+      }
+  }
+  
   public static void main (String args[]) throws IOException {
+      System.out.println("Estoy aqui");
       Pacientes p1 = new Pacientes();
        p1.setCedula(100242);
         p1.setNombre("diana");
