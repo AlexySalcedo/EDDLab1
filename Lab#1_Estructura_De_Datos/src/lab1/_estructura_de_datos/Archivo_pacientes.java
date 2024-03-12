@@ -58,6 +58,25 @@ public class Archivo_pacientes {
       }
   }
   
+  public void Eliminar(long c, String es){
+      try{
+      File fr = new File("C:\\Temp\\ArchivoPacientes.txt");
+      FileWriter fw = new FileWriter(fr);
+      BufferedWriter bw = new BufferedWriter(fw);
+      List<String> l = new ArrayList<>();
+      l = Files.readAllLines(Paths.get(fr.getPath()));
+          for (String linea : l) {
+              Pacientes pac = new Pacientes(linea);
+              if (!(pac.getCedula() == c && pac.getEspecialidadMedica()==es)) {
+               bw.write(linea + "\n");
+              }
+          }
+      }
+      catch(Exception ex){
+          System.out.println(ex.getMessage());
+      }
+  }
+  
   public static void main (String args[]) throws IOException {
       System.out.println("Estoy aqui");
       Pacientes p1 = new Pacientes();
@@ -71,4 +90,4 @@ public class Archivo_pacientes {
       ar.Crear_Archivo();
       ar.Adicionar(p1);
   }
-  }
+ }
