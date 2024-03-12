@@ -14,6 +14,7 @@ import java.util.List;
 
 public class Archivo_pacientes {
     
+<<<<<<< Updated upstream
     
     File archivoP = new File ("C:\\Temp\\ArchivoPacientes.txt");
     
@@ -91,3 +92,15 @@ public class Archivo_pacientes {
       ar.Adicionar(p1);
   }
  }
+=======
+    File pacientes;
+    
+    private void CrearArchivoPacientes(){
+        pacientes = new File("ArchivoPacientes.txt");
+        
+    }
+ 
+}
+        
+            
+>>>>>>> Stashed changes
