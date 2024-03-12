@@ -71,8 +71,7 @@ public class Pacientes {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
-    }
-    
+    } 
     
     public String getDatos(){
         return getCedula() +"~"+getNombre() +"~"+getApellido() +"~"+getEspecialidadMedica() +"~"+getMedicoAsignado() +"~"+getFecha();
