@@ -4,16 +4,21 @@ package lab1._estructura_de_datos;
 
 public class Pacientes {
     double cedula;
-    String nombre,apellido,especialidadMedica,medicoAsignado;
+    String nombre,apellido,especialidadMedica,medicoAsignado, fecha;
     
-    public Pacientes(){
-        cedula = 0;
-        nombre = "";
-        apellido= "";
-        especialidadMedica="";
-        medicoAsignado="";
+    public Pacientes(double ced, String nom, String ape, String esp, String med, String fec){
+        this.nombre = nom;
+        this.apellido = ape;
+        this.cedula = ced;
+        this.especialidadMedica = esp;
+        this.fecha = fec;
+        this.medicoAsignado = med;
     }
-
+    
+    public Pacientes(String cad){
+        String[] rest = cad.split("~");
+    }
+    
     public double getCedula() {
         return cedula;
     }
@@ -52,6 +57,19 @@ public class Pacientes {
 
     public void setMedicoAsignado(String medicoAsignado) {
         this.medicoAsignado = medicoAsignado;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+    
+    
+    public String getDatos(){
+        return getCedula() +"~"+getNombre() +"~"+getApellido() +"~"+getEspecialidadMedica() +"~"+getMedicoAsignado() +"~"+getFecha();
     }
     
     
