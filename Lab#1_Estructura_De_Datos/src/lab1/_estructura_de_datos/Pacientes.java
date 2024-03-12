@@ -77,5 +77,8 @@ public class Pacientes {
         return getCedula() +"~"+getNombre() +"~"+getApellido() +"~"+getEspecialidadMedica() +"~"+getMedicoAsignado() +"~"+getFecha();
     }
     
+    public Pacientes(){
+        
+    }
     
 }
