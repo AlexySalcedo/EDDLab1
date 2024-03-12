@@ -17,6 +17,12 @@ public class Pacientes {
     
     public Pacientes(String cad){
         String[] rest = cad.split("~");
+        this.cedula = (Double.parseDouble(rest[0].trim()));
+        this.nombre = (rest[1]);
+        this.apellido =(rest[2]);
+        this.especialidadMedica = (rest[3]);
+        this.medicoAsignado = (rest [4]);
+        this.fecha = (rest [5]);   
     }
     
     public double getCedula() {
