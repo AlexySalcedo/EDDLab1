@@ -1,4 +1,4 @@
-package archivomedicos;
+package lab1._estructura_de_datos;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
