@@ -138,6 +138,28 @@ public class ArchivoMedicos {
             System.out.println(e.getMessage());
         }
     }
+    
+    //
+    public ArrayList<Medicos> Medes(String es) {
+        ArrayList<Medicos> m = new ArrayList<Medicos>();
+        try {
+            File f = new File("C:\\Temp\\ArchivoMedicos.txt");
+            FileReader fr = new FileReader(f);
+            BufferedReader br = new BufferedReader(fr);
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                Medicos med = new Medicos(linea);
+                if (med.getEspecialidad() == es) {
+                    m.add(med);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return m;
+    }
+
+    //
 
     public static void main(String[] args) {
         int n = 153;
