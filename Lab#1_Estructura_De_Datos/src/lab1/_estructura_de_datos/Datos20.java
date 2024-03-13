@@ -22,20 +22,20 @@ public class Datos20 {
         }
     }
     
-    public boolean Adicionar(Pacientes pac) {
+    public boolean Adicionar(Medicos med) {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
-        m=Consultar(pac.getCedula());
+        m=Consultar(med.getIdentificacion());
         boolean sw=true;
-        for (int i = 0; i < p.size(); i++) {
-            if ((p.get(i).getCedula() == pac.getCedula()) && (p.get(i).getEspecialidadMedica().equals(pac.getEspecialidadMedica())) && (p.get(i).getames() == pac.getames())) {
+        for (int i = 0; i < m.size(); i++) {
+            if ((m.get(i).getIdentificacion() == med.identificacion) && (m.get(i).getEspecialidad().equals(med.getEspecialidad()))) {
                     sw = false;
             }
         }
         if (sw == true){
         try {
-            FileWriter fw = new FileWriter("ArchivoPacientes.txt", true);
+            FileWriter fw = new FileWriter("ArchivoMedicos.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(pac.getDatos() + "\n");
+            bw.write(med.getDatos() + "\n");
             bw.flush();
             bw.close();
         } catch (Exception ex) {
@@ -62,7 +62,7 @@ public class Datos20 {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-           return p; 
+           return m; 
     }
     
     int bayter = 0, gomez = 0, medina = 0, perez = 0, botero = 0, molina = 0, aroca = 0, camargo = 0, tellez = 0, cochero = 0;

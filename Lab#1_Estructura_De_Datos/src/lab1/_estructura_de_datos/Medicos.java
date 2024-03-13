@@ -1,5 +1,5 @@
 
-package archivomedicos;
+package lab1._estructura_de_datos;
 
 public class Medicos {
     
