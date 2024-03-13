@@ -1,10 +1,23 @@
-package datos20;
+package lab1._estructura_de_datos;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Datos20 {
-
+    
+    File archivoM = new File("ArchivoMedicos.txt");
+    
+    //Creacion del archivo
+    public void Crear_Archivo() {
+        try {
+            archivoM.createNewFile();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+    
     int bayter = 0, gomez = 0, medina = 0, perez = 0, botero = 0, molina = 0, aroca = 0, camargo = 0, tellez = 0, cochero = 0;
 
     public void AsignarCita() {
