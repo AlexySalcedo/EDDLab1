@@ -1,25 +1,34 @@
-package lab1._estructura_de_datos;
 
-import java.io.FileWriter;
-import java.io.IOException;
+package archivomedicos;
 
-class Medicos {
-
-    String nombre, especialidad;
-    long identificacion, telefono;
-    int cita;
+public class Medicos {
     
-    int bayter = 0, gomez = 0, medina = 0, perez = 0, botero = 0, molina = 0, aroca = 0, camargo = 0, tellez = 0, cochero = 0;
-
-    public Medicos() {
-    }
-
-    public Medicos(String nom, String esp, long ide, long tel,int c) {
+    long  identificacion;
+    String nombre, especialidad;
+    int telefono, cita;
+    
+    public Medicos(long ide, String nom, String esp, int tel){
         this.nombre = nom;
-        this.especialidad = esp;
         this.identificacion = ide;
+        this.especialidad = esp;
         this.telefono = tel;
         this.cita = 0;
+    }
+    public Medicos(String cadena){
+        String[] rest = cadena.split("-");
+        this.identificacion = (Long.parseLong(rest[0].trim()));
+        this.nombre = (rest[1]);
+        this.especialidad = (rest[2]);
+        this.telefono = (Integer.parseInt(rest[3].trim()));
+        this.cita = (Integer.parseInt(rest[4].trim()));
+    }
+
+    public long getIdentificacion() {
+        return identificacion;
+    }
+
+    public void setIdentificacion(long identificacion) {
+        this.identificacion = identificacion;
     }
 
     public String getNombre() {
@@ -38,55 +47,27 @@ class Medicos {
         this.especialidad = especialidad;
     }
 
-    public long getIdentificacion() {
-        return identificacion;
-    }
-
-    public void setIdentificacion(long identificacion) {
-        this.identificacion = identificacion;
-    }
-
-    public long getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(long telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
-    }
-
-    public void setCita() {
-        this.cita = 0;
     }
 
     public int getCita() {
         return cita;
     }
 
-    public String getDatosM() {
-        return getIdentificacion() + " ~ " + getNombre() + " ~ " + getEspecialidad() + " ~ " + getTelefono() + " ~ " + getCita();
+    public void setCita(int cita) {
+        this.cita = cita;
     }
-
-    public void crearArchivo() {
-        try {
-            FileWriter crear = new FileWriter("medicos.txt");
-
-            crear.write("Dr. Jorge Bayter , Nutricionista , 134563 , 3008157670 , " + bayter + "\n");
-            crear.write("Dra. Maria Gomez, Nutricionista, 123458 , 3156654742 , " + gomez + "\n");
-            crear.write("Dr. Marlon Medina, Cardiologo, 159753 , 3008156770 , " + medina + "\n ");
-            crear.write("Dra. Estefania Perez, Cardiologa, 157953, 3124867595 , " + perez + "\n");
-            crear.write("Dra. Sandra Botero, Pediatra, 174963, 3129957486 , " + botero + "\n");
-            crear.write("Dra. Mariana Molina, Pediatra, 186245, 3227548695 , " + molina + "\n");
-            crear.write("Dra. Maria Aroca, Dermatologa, 196324, 3778459682 , " + aroca + "\n");
-            crear.write("Dr. Nicolas Camargo, Dermatologo, 105769, 3554879695 , " + camargo + "\n");
-            crear.write("Dr. Andres Tellez, Medico General, 106547, 3009457276 , " + tellez + "\n");
-            crear.write("Dra. Sofia Cochero, Medico General, 165789, 3221459685 , " + cochero + "\n");
-
-            System.out.println("Archivo de médicos creado exitosamente.");
-            crear.close();
-
-        } catch (IOException ex) {
-            System.out.println("ERROR CREANDO ARCHIVO");
-        }
-
+    
+    public String getDatos(){
+        return getIdentificacion() + "-" + getNombre() + "-" + getEspecialidad() + "-" + getTelefono() + "-" + getCita();
     }
+    
+    public Medicos(){
+    }
+    
 }
