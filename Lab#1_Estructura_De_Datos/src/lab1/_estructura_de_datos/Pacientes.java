@@ -1,6 +1,8 @@
 
 package lab1._estructura_de_datos;
 
+import java.time.LocalDate;
+
 
 public class Pacientes {
     long cedula;
@@ -11,6 +13,8 @@ public class Pacientes {
         this.apellido = ape;
         this.cedula = ced;
         this.especialidadMedica = esp;
+        String comprobarFecha[] = fecha.split("/");
+        LocalDate.of(Integer.parseInt(comprobarFecha[2]), Integer.parseInt(comprobarFecha[1]), Integer.parseInt(comprobarFecha[0]));
         this.fecha = fec;
         this.medicoAsignado = med;
     }
@@ -75,6 +79,14 @@ public class Pacientes {
     
     public String getDatos(){
         return getCedula() +"~"+getNombre() +"~"+getApellido() +"~"+getEspecialidadMedica() +"~"+getMedicoAsignado() +"~"+getFecha();
+    }
+    
+    public int getames(){
+       LocalDate fa = LocalDate.now();
+       int ames;
+       
+       
+     return ames;         
     }
     
     public Pacientes(){
