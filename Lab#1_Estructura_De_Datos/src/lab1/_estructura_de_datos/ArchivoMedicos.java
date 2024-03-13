@@ -80,6 +80,9 @@ public class ArchivoMedicos {
     }
     
     // 
+    public ArrayList<Medicos> Devolver(){
+        
+    }
     
     
     //CONSULTAR MEDICO
