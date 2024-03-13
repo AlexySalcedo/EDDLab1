@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class ArchivoMedicos {
 
-    File archivoM = new File("C:\\ArchivoMedicos.txt");
+    File archivoM = new File("ArchivoMedicos.txt");
 
     //CREAR ARCHIVO MEDICOS
     public void crearArchivoM() {
@@ -30,7 +30,7 @@ public class ArchivoMedicos {
     public void Añadir(Medicos med) {
         try {
 
-            FileWriter fw = new FileWriter("C:\\ArchivoMedicos.txt", true);
+            FileWriter fw = new FileWriter("ArchivoMedicos.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(med.getDatos() + "\n");
             bw.flush();
@@ -45,7 +45,7 @@ public class ArchivoMedicos {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
         int i = 0;
         try {
-            File f = new File("C:\\Temp\\ArchivoMedicos.txt");
+            File f = new File("ArchivoMedicos.txt");
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String linea;
@@ -60,19 +60,17 @@ public class ArchivoMedicos {
     }
 
     //ESPECIALIDADES
-    public List<String> obEsp(String Medico) {
+    public List<String> obEsp() {
         List<String> especialidades = new ArrayList<>();
         try {
-            FileReader fr = new FileReader(Medico);
+            FileReader fr = new FileReader(archivoM);
             BufferedReader br = new BufferedReader(fr);
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] c = linea.split("-");
-                if (c.length >= 5) {
-                    String especialidad = c[2].trim();
-                    if (!especialidades.contains(especialidad)) {
-                        especialidades.add(especialidad);
-                    }
+                String especialidad = c[2].trim();
+                if (!especialidades.contains(especialidad)) {
+                    especialidades.add(especialidad);
                 }
             }
             br.close();
@@ -87,7 +85,7 @@ public class ArchivoMedicos {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
         int i = 0;
         try {
-            File f = new File("C:\\Temp\\ArchivoMedicos.txt");
+            File f = new File("ArchivoMedicos.txt");
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String linea;
@@ -108,7 +106,7 @@ public class ArchivoMedicos {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
         m = Leer();
         try {
-            FileWriter fw = new FileWriter("C:\\Temp\\ArchivoMedicos.txt", false);
+            FileWriter fw = new FileWriter("ArchivoMedicos.txt", false);
             BufferedWriter bw = new BufferedWriter(fw);
             for (int i = 0; i < m.size(); i++) {
                 if (m.get(i).getIdentificacion() != el) {
@@ -125,7 +123,7 @@ public class ArchivoMedicos {
     //ELIMINAR UNA CITA DE MEDICOS
     public void Eliminar2(long el1, String espe) {
         try {
-            File ff = new File("C:\\Temp\\ArchivoMedicos.txt");
+            File ff = new File("ArchivoMedicos.txt");
             FileWriter fw = new FileWriter(ff);
             BufferedWriter bw = new BufferedWriter(fw);
             List<String> l = new ArrayList<>();
@@ -141,6 +139,35 @@ public class ArchivoMedicos {
         }
     }
 
+    //MEDICO
+    public List<String> obMed(String es) {
+        List<String> medicos = new ArrayList<>();
+        try {
+            File ff = new File("ArchivoMedicos.txt");
+            FileReader fr = new FileReader(ff);
+            BufferedReader br = new BufferedReader(fr);
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] c = linea.split("~");
+                String nombreM = c[1].trim();
+                String espe = c[2].trim();
+                int cit = Integer.parseInt(c[4].trim());
+                if (espe == es) {
+                    if (cit <= 10) {
+                        if (!medicos.contains(nombreM)) {
+                            medicos.add(nombreM);
+                        }
+                    }
+                }
+            }
+            br.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return medicos;
+    }
+
+    //Reiniciar el archivo medicos 
     public static void main(String[] args) {
         int n = 153;
         Medicos m1 = new Medicos();
@@ -152,7 +179,7 @@ public class ArchivoMedicos {
         am.Eliminar1(n);
         m = am.Leer();
         for (int i = 0; i < m.size(); i++) {
-            System.out.println(m.get(i).getDatos() + "-");
+            System.out.println(m.get(i).getDatos() + "~");
         }
     }
 

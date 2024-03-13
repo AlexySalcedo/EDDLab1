@@ -84,7 +84,7 @@ public class Archivo_pacientes {
            return p; 
     }
 
-    //Elimar todas las citas de un paciente
+    //Eliminar todas las citas de un paciente
     public void Eliminar(long c) {
         ArrayList<Pacientes> p = new ArrayList<Pacientes>();
         p=Leer();        
@@ -123,14 +123,14 @@ public class Archivo_pacientes {
     }
     
     //Eliminar citas asignadas
-    public void EliminarC(long id) {
+    public void EliminarC(String name) {
         ArrayList<Pacientes> p = new ArrayList<Pacientes>();
         p=Leer();        
         try {
             FileWriter fw = new FileWriter("ArchivoPacientes.txt",false);
             BufferedWriter bw = new BufferedWriter(fw);
                for (int i =0;i<p.size(); i++){
-                if ((p.get(i).getMedicoAsignado() != id))  {
+                if ((p.get(i).getMedicoAsignado() != name))  {
                     bw.write(p.get(i).getDatos() + "\n");
                 }
             }
@@ -148,7 +148,7 @@ public class Archivo_pacientes {
         p1.setNombre("DDD");
         p1.setApellido("gGGGG");
         p1.setEspecialidadMedica("ddteo");
-        p1.setMedicoAsignado(234886);
+        p1.setMedicoAsignado("arturo");
         p1.setFecha("5/11/2024");
         Archivo_pacientes ar = new Archivo_pacientes();
     

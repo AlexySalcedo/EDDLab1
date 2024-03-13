@@ -80,6 +80,9 @@ public class ArchivoMedicos {
     }
     
     // 
+    public ArrayList<Medicos> Devolver(){
+        
+    }
     
     
     //CONSULTAR MEDICO
@@ -141,19 +144,7 @@ public class ArchivoMedicos {
         }
     }
 
-    public static void main(String[] args) {
-        int n = 153;
-        Medicos m1 = new Medicos();
-        ArchivoMedicos am = new ArchivoMedicos();
-
-        am.crearArchivoM();
-
-        ArrayList<Medicos> m = new ArrayList<Medicos>();
-        am.Eliminar1(n);
-        m = am.Leer();
-        for (int i = 0; i < m.size(); i++) {
-            System.out.println(m.get(i).getDatos() + "-");
-        }
-    }
+   
+    
 
 }

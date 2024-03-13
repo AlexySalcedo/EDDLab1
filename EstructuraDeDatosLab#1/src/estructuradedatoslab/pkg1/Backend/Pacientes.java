@@ -7,9 +7,9 @@ import java.time.LocalDate;
 public class Pacientes {
     long cedula;
     String nombre,apellido,especialidadMedica, fecha;
-    long medicoAsignado;
+    String medicoAsignado;
     
-    public Pacientes(long ced, String nom, String ape, String esp, long med, String fec){
+    public Pacientes(long ced, String nom, String ape, String esp, String med, String fec){
         this.nombre = nom;
         this.apellido = ape;
         this.cedula = ced;
@@ -24,7 +24,7 @@ public class Pacientes {
         this.nombre = (rest[1]);
         this.apellido =(rest[2]);
         this.especialidadMedica = (rest[3]);
-        this.medicoAsignado = Long.parseLong(rest[4].trim());
+        this.medicoAsignado = (rest[4]);
         this.fecha = (rest [5]);   
     }
     
@@ -58,13 +58,13 @@ public class Pacientes {
 
     public void setEspecialidadMedica(String especialidadMedica) {
         this.especialidadMedica = especialidadMedica;
-    }
+           }
 
-    public long getMedicoAsignado() {
+    public String getMedicoAsignado() {
         return medicoAsignado;
     }
 
-    public void setMedicoAsignado(long medicoAsignado) {
+    public void setMedicoAsignado(String medicoAsignado) {
         this.medicoAsignado = medicoAsignado;
     }
 
