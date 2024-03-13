@@ -60,20 +60,18 @@ public class ArchivoMedicos {
     }
 
     //ESPECIALIDADES
-    public List<String> obEsp(String Medico) {
+    public List<String> obEsp() {
         List<String> especialidades = new ArrayList<>();
         try {
-            FileReader fr = new FileReader(Medico);
+            FileReader fr = new FileReader(archivoM);
             BufferedReader br = new BufferedReader(fr);
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] c = linea.split("-");
-                if (c.length >= 5) {
                     String especialidad = c[2].trim();
                     if (!especialidades.contains(especialidad)) {
                         especialidades.add(especialidad);
-                    }
-                }
+                    }                
             }
             br.close();
         } catch (IOException e) {
