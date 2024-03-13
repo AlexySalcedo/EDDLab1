@@ -142,29 +142,5 @@ public class Archivo_pacientes {
     }
 
 
-    public static void main(String args[]) throws IOException {
-        Pacientes p1 = new Pacientes();
-        p1.setCedula(123456789);
-        p1.setNombre("DDD");
-        p1.setApellido("gGGGG");
-        p1.setMedicoAsignado(234886);
-        p1.setFecha("5/11/2024");
-        Archivo_pacientes ar = new Archivo_pacientes();
     
-        ar.Crear_Archivo();
-        if (ar.Adicionar(p1) == false){
-          System.out.println("No se pudo grabar");
-   
-        }
-        ArrayList<Pacientes> p = new ArrayList<Pacientes>();
-        ar.Eliminar(123);
-        p=ar.Leer();
-        int tam=p.size();
-         System.out.println(tam);            
-        for (int i =0;i<tam; i++){
-         System.out.println(p.get(i).getDatos()+"~"+p.get(i).getames());
-        }
-  
-        
-    }
 }
