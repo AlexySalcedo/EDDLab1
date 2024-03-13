@@ -2,6 +2,8 @@
 package lab1._estructura_de_datos;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Pacientes {
@@ -56,8 +58,9 @@ public class Pacientes {
         return especialidadMedica;
     }
 
-    public void setEspecialidadMedica(String especialidadMedica) {
+    public void setEspecialidadMedica(String especialidadMedica, ArchivoMedicos es) {
         this.especialidadMedica = especialidadMedica;
+        List<String> especialidades = es.obEsp();
     }
 
     public long getMedicoAsignado() {

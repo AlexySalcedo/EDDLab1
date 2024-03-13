@@ -43,7 +43,6 @@ public class ArchivoMedicos {
     //LEER MEDICOS
     public ArrayList<Medicos> Leer() {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
-        int i = 0;
         try {
             File f = new File("C:\\Temp\\ArchivoMedicos.txt");
             FileReader fr = new FileReader(f);
@@ -60,20 +59,18 @@ public class ArchivoMedicos {
     }
 
     //ESPECIALIDADES
-    public List<String> obEsp(String Medico) {
+    public List<String> obEsp() {
         List<String> especialidades = new ArrayList<>();
         try {
-            FileReader fr = new FileReader(Medico);
+            FileReader fr = new FileReader(archivoM);
             BufferedReader br = new BufferedReader(fr);
             String linea;
             while ((linea = br.readLine()) != null) {
-                String[] c = linea.split("-");
-                if (c.length >= 5) {
+                String[] c = linea.split("~");
                     String especialidad = c[2].trim();
                     if (!especialidades.contains(especialidad)) {
                         especialidades.add(especialidad);
                     }
-                }
             }
             br.close();
         } catch (IOException e) {
@@ -81,7 +78,10 @@ public class ArchivoMedicos {
         }
         return especialidades;
     }
-
+    
+    // 
+    
+    
     //CONSULTAR MEDICO
     public ArrayList<Medicos> Consultar(long c) {
         ArrayList<Medicos> m = new ArrayList<Medicos>();

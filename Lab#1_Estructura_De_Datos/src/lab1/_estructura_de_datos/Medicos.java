@@ -15,7 +15,7 @@ public class Medicos {
         this.cita = 0;
     }
     public Medicos(String cadena){
-        String[] rest = cadena.split("-");
+        String[] rest = cadena.split("~");
         this.identificacion = (Long.parseLong(rest[0].trim()));
         this.nombre = (rest[1]);
         this.especialidad = (rest[2]);
@@ -64,7 +64,7 @@ public class Medicos {
     }
     
     public String getDatos(){
-        return getIdentificacion() + "-" + getNombre() + "-" + getEspecialidad() + "-" + getTelefono() + "-" + getCita();
+        return getIdentificacion() + "~" + getNombre() + "~" + getEspecialidad() + "~" + getTelefono() + "~" + getCita();
     }
     
     public Medicos(){
