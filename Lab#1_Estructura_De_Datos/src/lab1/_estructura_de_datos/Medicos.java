@@ -63,7 +63,7 @@ class Medicos {
     }
 
     public String getDatosM() {
-        return getIdentificacion() + " , " + getNombre() + " , " + getEspecialidad() + " , " + getTelefono() + " , " + getCita();
+        return getIdentificacion() + " ~ " + getNombre() + " ~ " + getEspecialidad() + " ~ " + getTelefono() + " ~ " + getCita();
     }
 
     public void crearArchivo() {
