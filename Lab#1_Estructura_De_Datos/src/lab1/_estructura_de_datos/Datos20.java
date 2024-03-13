@@ -1,7 +1,12 @@
 package lab1._estructura_de_datos;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Datos20 {
@@ -17,6 +22,48 @@ public class Datos20 {
         }
     }
     
+    public boolean Adicionar(Pacientes pac) {
+        ArrayList<Medicos> m = new ArrayList<Medicos>();
+        m=Consultar(pac.getCedula());
+        boolean sw=true;
+        for (int i = 0; i < p.size(); i++) {
+            if ((p.get(i).getCedula() == pac.getCedula()) && (p.get(i).getEspecialidadMedica().equals(pac.getEspecialidadMedica())) && (p.get(i).getames() == pac.getames())) {
+                    sw = false;
+            }
+        }
+        if (sw == true){
+        try {
+            FileWriter fw = new FileWriter("ArchivoPacientes.txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(pac.getDatos() + "\n");
+            bw.flush();
+            bw.close();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+         }
+       }
+        return sw;
+    }
+    
+    //Consultar un medico
+    public ArrayList<Medicos> Consultar(long c){
+        ArrayList<Medicos> m= new ArrayList<Medicos>();
+        try {
+            File f = new File("ArchivoMedicos.txt");
+            FileReader fr = new FileReader(f);
+            BufferedReader br = new BufferedReader(fr);
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                Medicos med = new Medicos(linea);
+                if (med.getIdentificacion()== c){
+                    m.add(med);
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+           return p; 
+    }
     
     int bayter = 0, gomez = 0, medina = 0, perez = 0, botero = 0, molina = 0, aroca = 0, camargo = 0, tellez = 0, cochero = 0;
 

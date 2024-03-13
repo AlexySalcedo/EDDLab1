@@ -67,7 +67,6 @@ public class Archivo_pacientes {
     //Consultar un paciente
     public ArrayList<Pacientes> Consultar(long c){
         ArrayList<Pacientes> p = new ArrayList<Pacientes>();
-        int i=0; 
         try {
             File f = new File("ArchivoPacientes.txt");
             FileReader fr = new FileReader(f);
@@ -106,22 +105,24 @@ public class Archivo_pacientes {
     
     //Eliminar una cita especifica del paciente
     public void Eliminar(long c, String es) {
+        ArrayList<Pacientes> p = new ArrayList<Pacientes>();
+        p=Leer();        
         try {
-            File fr = new File("ArchivoPacientes.txt");
-            FileWriter fw = new FileWriter(fr);
+            FileWriter fw = new FileWriter("ArchivoPacientes.txt",false);
             BufferedWriter bw = new BufferedWriter(fw);
-            List<String> l = new ArrayList<>();
-            l = Files.readAllLines(Paths.get(fr.getPath()));
-            for (String linea : l) {
-                Pacientes pac = new Pacientes(linea);
-                if (!(pac.getCedula() == c && pac.getEspecialidadMedica() == es)) {
-                    bw.write(linea + "\n");
+               for (int i =0;i<p.size(); i++){
+                if ((p.get(i).getCedula() != c) && !(p.get(i).getEspecialidadMedica().equals(es))) {
+                    bw.write(p.get(i).getDatos() + "\n");
                 }
             }
+            bw.flush();
+            bw.close();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
+    
+    
 
 
     public static void main(String args[]) throws IOException {
