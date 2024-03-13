@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="pn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1088.0" styleClass="backgroundColor" stylesheets="@background.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estructuradedatoslab.pkg1.PacientespageController">
+   <left>
+      <VBox alignment="CENTER" prefHeight="720.0" prefWidth="130.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20px;" text="Agregar cita" />
+            <Separator opacity="0.0" prefHeight="29.0" prefWidth="130.0" />
+            <Button mnemonicParsing="false" onAction="#consulte" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20px;" text="Consultar" />
+            <Separator opacity="0.0" prefHeight="28.0" prefWidth="130.0" />
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20px;" text="Button" />
+            <Separator opacity="0.0" prefHeight="26.0" prefWidth="130.0" />
+            <Button mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20px;" text="volver" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <Pane fx:id="pc" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="1.0" layoutY="2.0" prefHeight="717.0" prefWidth="897.0" />
+            <Pane layoutX="8.0" layoutY="25.0" prefHeight="680.0" prefWidth="937.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25px;">
+               <children>
+                  <Pane layoutX="50.0" layoutY="38.0" prefHeight="200.0" prefWidth="623.0" style="-fx-background-radius: 25;" styleClass="backgroundColor" stylesheets="@background.css">
+                     <children>
+                        <Pane layoutX="70.0" layoutY="62.0" prefHeight="70.0" prefWidth="538.0" style="-fx-background-radius: 25px; -fx-background-color: #ffffff;" stylesheets="@background.css" />
+                        <ImageView fitHeight="201.0" fitWidth="137.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Image/medica.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
