@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1000.0" style="-fx-background-color: #06141B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estructuradedatoslab.pkg1.InterfazController">
+   <children>
+      <ImageView fitHeight="725.0" fitWidth="523.0" layoutX="478.0" layoutY="-6.0" pickOnBounds="true">
+         <image>
+            <Image url="@Image/Chevere.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="-5.0" prefHeight="720.0" prefWidth="514.0" style="-fx-background-color: #11212d; -fx-background-radius: 0px 25px 25px 0px;">
+         <children>
+            <Label layoutX="189.0" layoutY="151.0" prefHeight="39.0" prefWidth="263.0" text=" Seguritas S.A" textAlignment="JUSTIFY" textFill="WHITE">
+               <font>
+                  <Font name="Avenir Next Bold" size="37.0" />
+               </font>
+            </Label>
+            <TextField alignment="BOTTOM_LEFT" layoutX="52.0" layoutY="279.0" prefHeight="79.0" prefWidth="390.0" style="-fx-background-color: #4A5C6A; -fx-background-radius: 20px;">
+               <font>
+                  <Font name="Avenir Next Regular" size="25.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextField>
+            <PasswordField alignment="BOTTOM_LEFT" layoutX="53.0" layoutY="389.0" prefHeight="79.0" prefWidth="390.0" style="-fx-background-color: #4A5C6A; -fx-background-radius: 20px;">
+               <font>
+                  <Font name="Avenir Next Regular" size="23.0" />
+               </font></PasswordField>
+            <Label layoutX="69.0" layoutY="390.0" prefHeight="31.0" prefWidth="102.0" text="Contraseña:" textFill="WHITE">
+               <font>
+                  <Font name="Avenir Next Regular" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="280.0" prefHeight="33.0" prefWidth="70.0" text="Usuario:" textFill="WHITE">
+               <font>
+                  <Font name="Avenir Next Regular" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnIngresar" layoutX="107.0" layoutY="566.0" mnemonicParsing="false" onAction="#clickIngresar" prefHeight="30.0" prefWidth="285.0" style="-fx-background-color: #E6A421; -fx-background-radius: 25px;" text="Ingresar" textFill="#11212d">
+               <font>
+                  <Font name="Avenir Next Bold" size="19.0" />
+               </font>
+            </Button>
+            <CheckBox layoutX="66.0" layoutY="498.0" mnemonicParsing="false" text="recuerdame mas tarde" textFill="WHITE">
+               <font>
+                  <Font name="Avenir Next Regular" size="16.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="47.0" layoutY="79.0" prefHeight="54.0" prefWidth="250.0" text="Bienvenido a" textAlignment="JUSTIFY" textFill="WHITE">
+               <font>
+                  <Font name="Avenir Next Bold" size="37.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
