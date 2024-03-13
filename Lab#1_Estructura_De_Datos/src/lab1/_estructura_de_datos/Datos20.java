@@ -90,9 +90,9 @@ public class Datos20 {
         try {
             FileWriter fw = new FileWriter("ArchivoPacientes.txt",false);
             BufferedWriter bw = new BufferedWriter(fw);
-               for (int i =0;i<p.size(); i++){
-                if (p.get(i).getCedula() != c) {
-                    bw.write(p.get(i).getDatos() + "\n");
+               for (int i =0;i<m.size(); i++){
+                if (m.get(i).getIdentificacion() != c) {
+                    bw.write(m.get(i).getDatos() + "\n");
                 }
             }
             bw.flush();

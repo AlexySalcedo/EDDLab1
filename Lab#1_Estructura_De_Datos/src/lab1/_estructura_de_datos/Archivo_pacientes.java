@@ -122,7 +122,24 @@ public class Archivo_pacientes {
         }
     }
     
-    
+    //Eliminar citas asignadas
+    public void EliminarC(long id) {
+        ArrayList<Pacientes> p = new ArrayList<Pacientes>();
+        p=Leer();        
+        try {
+            FileWriter fw = new FileWriter("ArchivoPacientes.txt",false);
+            BufferedWriter bw = new BufferedWriter(fw);
+               for (int i =0;i<p.size(); i++){
+                if ((p.get(i).getMedicoAsignado() != id))  {
+                    bw.write(p.get(i).getDatos() + "\n");
+                }
+            }
+            bw.flush();
+            bw.close();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 
 
     public static void main(String args[]) throws IOException {
