@@ -84,7 +84,7 @@ public class Archivo_pacientes {
            return p; 
     }
 
-    //Elimar todas las citas de un paciente
+    //Eliminar todas las citas de un paciente
     public void Eliminar(long c) {
         ArrayList<Pacientes> p = new ArrayList<Pacientes>();
         p=Leer();        
