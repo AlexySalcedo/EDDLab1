@@ -1,4 +1,4 @@
-package datos20;
+package lab1._estructura_de_datos;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.IOException;
 class Medicos {
 
     String nombre, especialidad;
-    int identificacion, telefono;
+    long identificacion, telefono;
     int cita;
     
     int bayter = 0, gomez = 0, medina = 0, perez = 0, botero = 0, molina = 0, aroca = 0, camargo = 0, tellez = 0, cochero = 0;
@@ -14,7 +14,7 @@ class Medicos {
     public Medicos() {
     }
 
-    public Medicos(String nom, String esp, int ide, int tel) {
+    public Medicos(String nom, String esp, long ide, long tel,int c) {
         this.nombre = nom;
         this.especialidad = esp;
         this.identificacion = ide;
@@ -38,19 +38,19 @@ class Medicos {
         this.especialidad = especialidad;
     }
 
-    public int getIdentificacion() {
+    public long getIdentificacion() {
         return identificacion;
     }
 
-    public void setIdentificacion(int identificacion) {
+    public void setIdentificacion(long identificacion) {
         this.identificacion = identificacion;
     }
 
-    public int getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
 

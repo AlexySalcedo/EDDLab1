@@ -106,8 +106,7 @@ public class Datos20 {
     }
 
     public static void main(String[] args) throws IOException {
-        Medicos med = new Medicos();
-        med.crearArchivo();
+        
         
         Datos20 dd = new Datos20();
         dd.AsignarCita();
