@@ -23,8 +23,6 @@
             <Button mnemonicParsing="false" onAction="#btnAgregarCita" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20px;" text="Agregar cita" />
             <Separator opacity="0.0" prefHeight="29.0" prefWidth="130.0" />
             <Button mnemonicParsing="false" onAction="#consulte" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20px;" text="Consultar" />
-            <Separator opacity="0.0" prefHeight="28.0" prefWidth="130.0" />
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20px;" text="Button" />
             <Separator opacity="0.0" prefHeight="26.0" prefWidth="130.0" />
             <Button mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20px;" text="volver" />
          </children>
