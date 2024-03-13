@@ -6,15 +6,14 @@ import java.time.LocalDate;
 
 public class Pacientes {
     long cedula;
-    String nombre,apellido,especialidadMedica,medicoAsignado, fecha;
+    String nombre,apellido,especialidadMedica, fecha;
+    long medicoAsignado;
     
-    public Pacientes(long ced, String nom, String ape, String esp, String med, String fec){
+    public Pacientes(long ced, String nom, String ape, String esp, long med, String fec){
         this.nombre = nom;
         this.apellido = ape;
         this.cedula = ced;
         this.especialidadMedica = esp;
-        String comprobarFecha[] = fecha.split("/");
-        LocalDate.of(Integer.parseInt(comprobarFecha[2]), Integer.parseInt(comprobarFecha[1]), Integer.parseInt(comprobarFecha[0]));
         this.fecha = fec;
         this.medicoAsignado = med;
     }
@@ -25,7 +24,7 @@ public class Pacientes {
         this.nombre = (rest[1]);
         this.apellido =(rest[2]);
         this.especialidadMedica = (rest[3]);
-        this.medicoAsignado = (rest [4]);
+        this.medicoAsignado = Long.parseLong(rest[4].trim());
         this.fecha = (rest [5]);   
     }
     
@@ -61,11 +60,11 @@ public class Pacientes {
         this.especialidadMedica = especialidadMedica;
     }
 
-    public String getMedicoAsignado() {
+    public long getMedicoAsignado() {
         return medicoAsignado;
     }
 
-    public void setMedicoAsignado(String medicoAsignado) {
+    public void setMedicoAsignado(long medicoAsignado) {
         this.medicoAsignado = medicoAsignado;
     }
 
@@ -82,10 +81,11 @@ public class Pacientes {
     }
     
     public int getames(){
-       LocalDate fa = LocalDate.now();
+       String division[] = fecha.split("/");
        int ames;
-       
-       
+       int mes = Integer.parseInt(division[1]);
+       int an = Integer.parseInt(division[2]);
+       ames = an*100 + mes;
      return ames;         
     }
     

@@ -1,0 +1,10 @@
+crear.write("Dr. Jorge Bayter , Nutricionista , 134563 , 3008157670 , " + bayter + "\n");
+            crear.write("Dra. Maria Gomez, Nutricionista, 123458 , 3156654742 , " + gomez + "\n");
+            crear.write("Dr. Marlon Medina, Cardiologo, 159753 , 3008156770 , " + medina + "\n ");
+            crear.write("Dra. Estefania Perez, Cardiologa, 157953, 3124867595 , " + perez + "\n");
+            crear.write("Dra. Sandra Botero, Pediatra, 174963, 3129957486 , " + botero + "\n");
+            crear.write("Dra. Mariana Molina, Pediatra, 186245, 3227548695 , " + molina + "\n");
+            crear.write("Dra. Maria Aroca, Dermatologa, 196324, 3778459682 , " + aroca + "\n");
+            crear.write("Dr. Nicolas Camargo, Dermatologo, 105769, 3554879695 , " + camargo + "\n");
+            crear.write("Dr. Andres Tellez, Medico General, 106547, 3009457276 , " + tellez + "\n");
+            crear.write("Dra. Sofia Cochero, Medico General, 165789, 3221459685 , " + cochero + "\n");

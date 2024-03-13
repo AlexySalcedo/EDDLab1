@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Archivo_pacientes {
 
-    File archivoP = new File("C:\\Temp\\ArchivoPacientes.txt");
+    File archivoP = new File("ArchivoPacientes.txt");
     
     
     //Creacion del archivo
@@ -22,16 +22,27 @@ public class Archivo_pacientes {
     }
     
     //Adicionar un paciente
-    public void Adicionar(Pacientes pac) {
+    public boolean Adicionar(Pacientes pac) {
+        ArrayList<Pacientes> p = new ArrayList<Pacientes>();
+        p=Consultar(pac.getCedula());
+        boolean sw=true;
+        for (int i = 0; i < p.size(); i++) {
+            if ((p.get(i).getCedula() == pac.getCedula()) && (p.get(i).getEspecialidadMedica().equals(pac.getEspecialidadMedica())) && (p.get(i).getames() == pac.getames())) {
+                    sw = false;
+            }
+        }
+        if (sw == true){
         try {
-            FileWriter fw = new FileWriter("C:\\Temp\\ArchivoPacientes.txt", true);
+            FileWriter fw = new FileWriter("ArchivoPacientes.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(pac.getDatos() + "\n");
             bw.flush();
             bw.close();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
-        }
+         }
+       }
+        return sw;
     }
     
     //Leer el archivo
@@ -39,7 +50,7 @@ public class Archivo_pacientes {
         ArrayList<Pacientes> p = new ArrayList<Pacientes>();
         int i=0; 
         try {
-            File f = new File("C:\\Temp\\ArchivoPacientes.txt");
+            File f = new File("ArchivoPacientes.txt");
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String linea;
@@ -58,7 +69,7 @@ public class Archivo_pacientes {
         ArrayList<Pacientes> p = new ArrayList<Pacientes>();
         int i=0; 
         try {
-            File f = new File("C:\\Temp\\ArchivoPacientes.txt");
+            File f = new File("ArchivoPacientes.txt");
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String linea;
@@ -74,12 +85,12 @@ public class Archivo_pacientes {
            return p; 
     }
 
-    //Eliminar todas las citas de un paciente
+    //Elimar todas las citas de un paciente
     public void Eliminar(long c) {
         ArrayList<Pacientes> p = new ArrayList<Pacientes>();
         p=Leer();        
         try {
-            FileWriter fw = new FileWriter("C:\\Temp\\ArchivoPacientes.txt",false);
+            FileWriter fw = new FileWriter("ArchivoPacientes.txt",false);
             BufferedWriter bw = new BufferedWriter(fw);
                for (int i =0;i<p.size(); i++){
                 if (p.get(i).getCedula() != c) {
@@ -96,7 +107,7 @@ public class Archivo_pacientes {
     //Eliminar una cita especifica del paciente
     public void Eliminar(long c, String es) {
         try {
-            File fr = new File("C:\\Temp\\ArchivoPacientes.txt");
+            File fr = new File("ArchivoPacientes.txt");
             FileWriter fw = new FileWriter(fr);
             BufferedWriter bw = new BufferedWriter(fw);
             List<String> l = new ArrayList<>();
@@ -112,26 +123,6 @@ public class Archivo_pacientes {
         }
     }
 
-    public void Editar(long c) {
-        try {
-            File fr = new File("C:\\Temp\\ArchivoPacientes.txt");
-            FileWriter fw = new FileWriter(fr);
-            BufferedWriter bw = new BufferedWriter(fw);
-            List<String> l = new ArrayList<>();
-            l = Files.readAllLines(Paths.get(fr.getPath()));
-            for (int i = 0; i < l.size(); i++) {
-                String get = l.get(i);
-                Pacientes pac = new Pacientes(get);
-                if (pac.getCedula() == c) {
-                    
-                } else {
-                    bw.write(pac.getDatos() + "\n");
-                }
-            }
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
 
     public static void main(String args[]) throws IOException {
         Pacientes p1 = new Pacientes();
@@ -139,19 +130,22 @@ public class Archivo_pacientes {
         p1.setNombre("DDD");
         p1.setApellido("gGGGG");
         p1.setEspecialidadMedica("ddteo");
-        p1.setMedicoAsignado("Candddddddi");
-        p1.setFecha("5/10/2019");
+        p1.setMedicoAsignado(234886);
+        p1.setFecha("5/11/2024");
         Archivo_pacientes ar = new Archivo_pacientes();
     
         ar.Crear_Archivo();
-        ar.Adicionar(p1);
+        if (ar.Adicionar(p1) == false){
+          System.out.println("No se pudo grabar");
+   
+        }
         ArrayList<Pacientes> p = new ArrayList<Pacientes>();
         ar.Eliminar(123);
         p=ar.Leer();
         int tam=p.size();
          System.out.println(tam);            
         for (int i =0;i<tam; i++){
-         System.out.println(p.get(i).getDatos());
+         System.out.println(p.get(i).getDatos()+"~"+p.get(i).getames());
         }
   
         
