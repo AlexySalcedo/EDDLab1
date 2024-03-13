@@ -68,10 +68,10 @@ public class ArchivoMedicos {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] c = linea.split("-");
-                    String especialidad = c[2].trim();
-                    if (!especialidades.contains(especialidad)) {
-                        especialidades.add(especialidad);
-                    }                
+                String especialidad = c[2].trim();
+                if (!especialidades.contains(especialidad)) {
+                    especialidades.add(especialidad);
+                }
             }
             br.close();
         } catch (IOException e) {
@@ -138,10 +138,9 @@ public class ArchivoMedicos {
             System.out.println(e.getMessage());
         }
     }
-    
-    
+
     //MEDICO
-    public List<String> obMed(String es){
+    public List<String> obMed(String es) {
         List<String> medicos = new ArrayList<>();
         try {
             File ff = new File("ArchivoMedicos.txt");
@@ -152,23 +151,23 @@ public class ArchivoMedicos {
                 String[] c = linea.split("~");
                 String nombreM = c[1].trim();
                 String espe = c[2].trim();
-                if (espe == es ){
-                if (!medicos.contains(nombreM)) {
-                    medicos.add(nombreM);
+                int cit = Integer.parseInt(c[4].trim());
+                if (espe == es) {
+                    if (cit <= 10) {
+                        if (!medicos.contains(nombreM)) {
+                            medicos.add(nombreM);
+                        }
+                    }
                 }
             }
-            }
             br.close();
-        } catch(IOException e){
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
         return medicos;
     }
-    
 
-    //Borrar las citas asignadas a un medico
-    
-
+    //Reiniciar el archivo medicos 
     public static void main(String[] args) {
         int n = 153;
         Medicos m1 = new Medicos();
@@ -180,7 +179,7 @@ public class ArchivoMedicos {
         am.Eliminar1(n);
         m = am.Leer();
         for (int i = 0; i < m.size(); i++) {
-            System.out.println(m.get(i).getDatos() + "-");
+            System.out.println(m.get(i).getDatos() + "~");
         }
     }
 
