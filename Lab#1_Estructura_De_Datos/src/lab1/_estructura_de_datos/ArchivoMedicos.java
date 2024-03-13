@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ArchivoMedicos {
 
-    File archivoM = new File("C:\\ArchivoMedicos.txt");
+    File archivoM = new File("ArchivoMedicos.txt");
 
     //CREAR ARCHIVO MEDICOS
     public void crearArchivoM() {
@@ -28,7 +28,7 @@ public class ArchivoMedicos {
     public void Añadir(Medicos med) {
         try {
 
-            FileWriter fw = new FileWriter("C:\\ArchivoMedicos.txt", true);
+            FileWriter fw = new FileWriter("ArchivoMedicos.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(med.getDatos() + "\n");
             bw.flush();
@@ -43,7 +43,7 @@ public class ArchivoMedicos {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
         int i = 0;
         try {
-            File f = new File("C:\\Temp\\ArchivoMedicos.txt");
+            File f = new File("ArchivoMedicos.txt");
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String linea;
@@ -62,7 +62,7 @@ public class ArchivoMedicos {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
         int i = 0;
         try {
-            File f = new File("C:\\Temp\\ArchivoMedicos.txt");
+            File f = new File("ArchivoMedicos.txt");
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String linea;
@@ -78,12 +78,12 @@ public class ArchivoMedicos {
         return m;
     }
     
-    //ELIMINAR LAS CITAS DE UN MEDICO
+    //ELIMINAR UN MEDICO
     public void Eliminar1(long el){
         ArrayList<Medicos> m = new ArrayList<Medicos>();
         m=Leer();
         try{
-            FileWriter fw = new FileWriter("C:\\Temp\\ArchivoMedicos.txt", false);
+            FileWriter fw = new FileWriter("ArchivoMedicos.txt", false);
             BufferedWriter bw = new BufferedWriter(fw);
             for (int i = 0; i < m.size(); i++) {
                 if (m.get(i).getIdentificacion() != el) {
@@ -100,7 +100,7 @@ public class ArchivoMedicos {
     //ELIMINAR UNA CITA DE MEDICOS
     public void Eliminar2(long el1, String espe){
         try{
-            File ff = new File("C:\\Temp\\ArchivoMedicos.txt");
+            File ff = new File("ArchivoMedicos.txt");
             FileWriter fw = new FileWriter(ff);
             BufferedWriter bw = new BufferedWriter(fw);
             List<String> l = new ArrayList<>();
