@@ -138,7 +138,7 @@ public class ArchivoMedicos {
         }
     }
 
-    //MEDICO
+    //Listar medicos por especialidad 
     public List<String> obMed(String es) {
         List<String> medicos = new ArrayList<>();
         try {
