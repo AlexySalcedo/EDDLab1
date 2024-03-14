@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 public class ArchivoMedicos {
     
@@ -35,8 +36,9 @@ public class ArchivoMedicos {
         m=Consultar(med.getIdentificacion());
         boolean sw=true;
         for (int i = 0; i < m.size(); i++) {
-            if ((m.get(i).getIdentificacion() == med.getIdentificacion())) {
+            if ((m.get(i).getIdentificacion() == med.getIdentificacion())&& m.get(i).getEspecialidad().equals(med.getEspecialidad())) {
                     sw = false;
+                    JOptionPane.showMessageDialog(null, "Ese medico ya esta registrado", "ERROR", 0);
             }
         }
         if (sw == true){
