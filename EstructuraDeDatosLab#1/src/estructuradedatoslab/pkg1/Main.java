@@ -3,6 +3,7 @@ package estructuradedatoslab.pkg1;
 
 import estructuradedatoslab.pkg1.Backend.ArchivoMedicos;
 import estructuradedatoslab.pkg1.Backend.Archivo_pacientes;
+import estructuradedatoslab.pkg1.pacientes_funciones.PacientespageController;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -23,9 +24,11 @@ public class Main extends Application {
         primaryStage.show();
         medic.crearArchivoM();
         pace.Crear_Archivo();
+    
         
         
     }
+ 
 static ArchivoMedicos medic = new ArchivoMedicos();
 static Archivo_pacientes pace = new Archivo_pacientes();
     /**

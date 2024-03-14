@@ -85,12 +85,12 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         this.colEspecialidad.setCellValueFactory(new PropertyValueFactory("especialidadMedica"));
         this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
         this.setespecialidad.setItems(FXCollections.observableArrayList("Neurologia","Medicina General", "Pediatria", "Cardiologia"));
-    } 
-    public void CargarTabla(){
-        this.paciente = FXCollections.observableList(pacien.Leer());
-        this.tblPacientesAgr=new TableView<>(paciente);
         this.tblPacientesAgr.setItems(paciente);
-    }
+    } 
+    
+        
+        
+    
     
 
     @FXML
