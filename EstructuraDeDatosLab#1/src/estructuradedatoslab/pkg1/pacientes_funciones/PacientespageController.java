@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package estructuradedatoslab.pkg1.pacientes_funciones;
 
 import estructuradedatoslab.pkg1.Backend.Archivo_pacientes;
@@ -12,7 +9,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import static java.time.temporal.TemporalQueries.localDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -90,7 +86,11 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
         this.setespecialidad.setItems(FXCollections.observableArrayList("Neurologia","Medicina General", "Pediatria", "Cardiologia"));
     } 
-    
+    public void CargarTabla(){
+        this.paciente = FXCollections.observableList(pacien.Leer());
+        this.tblPacientesAgr=new TableView<>(paciente);
+        this.tblPacientesAgr.setItems(paciente);
+    }
     
 
     @FXML
@@ -124,11 +124,13 @@ Archivo_pacientes pacien = new Archivo_pacientes();
     @FXML
     private void btnAgregarCita(ActionEvent event) {
         pn.setCenter(pc);
+        this.tblPacientesAgr.setItems(paciente);
     }
 
     @FXML
     private void btnAñadirCita(ActionEvent event) {
         try {
+            
         String name = setNombre.getText();
         long ide = Long.parseLong(setIdentificacion.getText());
         String espe = setespecialidad.getValue();
@@ -148,7 +150,7 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         
         
         
-        } catch(NumberFormatException e) {
+        } catch(Exception e) {
             System.out.println("Error aca bb revisa");
         }
         
