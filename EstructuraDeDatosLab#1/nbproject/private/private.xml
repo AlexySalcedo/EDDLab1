@@ -3,6 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            <file>file:/Users/alexysalcedo/Documents/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/medicos_funciones/MedicosPage.fxml</file>
+            <file>file:/Users/alexysalcedo/Documents/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/medicos_funciones/btnConsultarmed.fxml</file>
+            <file>file:/Users/alexysalcedo/Documents/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/medicos_funciones/BtnConsultarmedController.java</file>
+            <file>file:/Users/alexysalcedo/Documents/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/Backend/ArchivoMedicos.java</file>
+            <file>file:/Users/alexysalcedo/Documents/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/pacientes_funciones/BtnConsultarController.java</file>
+            <file>file:/Users/alexysalcedo/Documents/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/Backend/Medicos.java</file>
+            <file>file:/Users/alexysalcedo/Documents/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/medicos_funciones/MedicosPageController.java</file>
+            <file>file:/Users/alexysalcedo/Documents/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/pacientes_funciones/PacientespageController.java</file>
+            <file>file:/Users/alexysalcedo/Documents/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/paginasDelView/PersonasYmedicosController.java</file>
+=======
+>>>>>>> a8c7fd48e2c8e14a65d6965da3b389b659d48534
             <file>file:/C:/Users/dipae/OneDrive/Documentos/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/Backend/ArchivoMedicos.java</file>
             <file>file:/C:/Users/dipae/OneDrive/Documentos/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/Backend/Pacientes.java</file>
             <file>file:/C:/Users/dipae/OneDrive/Documentos/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/medicos_funciones/MedicosPageController.java</file>
@@ -10,6 +24,10 @@
             <file>file:/C:/Users/dipae/OneDrive/Documentos/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/pacientes_funciones/BtnConsultarController.java</file>
             <file>file:/C:/Users/dipae/OneDrive/Documentos/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/Backend/Archivo_pacientes.java</file>
             <file>file:/C:/Users/dipae/OneDrive/Documentos/GitHub/EDDLab1/EstructuraDeDatosLab%231/src/estructuradedatoslab/pkg1/Backend/Medicos.java</file>
+<<<<<<< HEAD
+=======
+>>>>>>> parent of b993629 (all)
+>>>>>>> a8c7fd48e2c8e14a65d6965da3b389b659d48534
         </group>
     </open-files>
 </project-private>

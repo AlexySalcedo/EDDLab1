@@ -51,7 +51,7 @@ public class BtnConsultarController implements Initializable {
     Archivo_pacientes pacien = new Archivo_pacientes();
      ArchivoMedicos medis = new ArchivoMedicos();
     @FXML
-    private TableColumn<?, ?> colFechaCita;
+    private TableColumn colFechaCita;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         paciente = FXCollections.observableList(pacien.Leer());

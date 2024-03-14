@@ -63,7 +63,6 @@ public class PacientespageController implements Initializable {
     private TableColumn colFechaCita;
     @FXML
     private TableColumn colMedicoAsignado;
-    @FXML
     private ObservableList <Pacientes> paciente;
     @FXML
     private TableColumn colApellido;
@@ -91,7 +90,7 @@ public class PacientespageController implements Initializable {
         this.colMedicoAsignado.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colEspecialidad.setCellValueFactory(new PropertyValueFactory("especialidadMedica"));
         this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
-        this.setespecialidad.setItems(FXCollections.observableList(medis.obEsp()));
+        
         setespecialidad.setOnAction(this::asi);
         
         
@@ -158,7 +157,6 @@ public class PacientespageController implements Initializable {
         
         String fecc= fechita.format(formatter);
         String apel= setApellido.getText();
-        
        
         
         Pacientes pa = new Pacientes(ide,name,apel,espe,nm,fecc);
@@ -168,8 +166,14 @@ public class PacientespageController implements Initializable {
         this.tblPacientesAgr.setItems(paciente);
         this.pacien.Adicionar(pa);
         sw2 = medis.AgregarCita(nm);
+<<<<<<< HEAD
         } else{
              JOptionPane.showMessageDialog(null, "El dato identificacion no cumple con los parametros\nVerifique los datos ingresados", "ERROR", 0);
+=======
+        if (sw2 == true ){
+            JOptionPane.showMessageDialog(null, "Valor incrementado", "ERROR", 0);
+        }
+>>>>>>> a8c7fd48e2c8e14a65d6965da3b389b659d48534
         }
         
         }else{
