@@ -26,7 +26,7 @@
                   <Font name="Avenir Next Bold" size="37.0" />
                </font>
             </Label>
-            <TextField alignment="BOTTOM_LEFT" layoutX="52.0" layoutY="279.0" prefHeight="79.0" prefWidth="390.0" style="-fx-background-color: #4A5C6A; -fx-background-radius: 20px;">
+            <TextField fx:id="user" alignment="BOTTOM_LEFT" layoutX="52.0" layoutY="279.0" prefHeight="79.0" prefWidth="409.0" style="-fx-background-color: #4A5C6A; -fx-background-radius: 20px;">
                <font>
                   <Font name="Avenir Next Regular" size="25.0" />
                </font>
@@ -34,7 +34,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </TextField>
-            <PasswordField alignment="BOTTOM_LEFT" layoutX="53.0" layoutY="389.0" prefHeight="79.0" prefWidth="390.0" style="-fx-background-color: #4A5C6A; -fx-background-radius: 20px;">
+            <PasswordField fx:id="password" alignment="BOTTOM_LEFT" layoutX="53.0" layoutY="389.0" prefHeight="79.0" prefWidth="409.0" style="-fx-background-color: #4A5C6A; -fx-background-radius: 20px;">
                <font>
                   <Font name="Avenir Next Regular" size="23.0" />
                </font></PasswordField>

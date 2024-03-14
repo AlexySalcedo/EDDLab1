@@ -1,6 +1,7 @@
 
 package estructuradedatoslab.pkg1;
 
+import estructuradedatoslab.pkg1.pacientes_funciones.PacientespageController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -47,6 +48,7 @@ public class VistaPrincipalController implements Initializable {
     private void people(ActionEvent event) {
         
         loadpage("/estructuradedatoslab/pkg1/paginasDelView/PersonasYmedicos.fxml");
+    
     }
 
     @FXML

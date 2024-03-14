@@ -1,6 +1,8 @@
 
 package estructuradedatoslab.pkg1;
 
+import estructuradedatoslab.pkg1.Backend.ArchivoMedicos;
+import estructuradedatoslab.pkg1.Backend.Archivo_pacientes;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -19,13 +21,19 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene (new Scene(root)) ;
         primaryStage.show();
+        medic.crearArchivoM();
+        pace.Crear_Archivo();
+        
+        
     }
-
+static ArchivoMedicos medic = new ArchivoMedicos();
+static Archivo_pacientes pace = new Archivo_pacientes();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         launch(args);
+        
     }
     public static void cerrar(ActionEvent e){
         Node source = (Node)e.getSource();
