@@ -1,1 +1,5 @@
 222~Juan~Cardiologo~3182~0
+1002~Diana~Medicina ~32067~0
+10~Diana~fisiterapia~312452~0
+10422464696~Diana~Oftalmologia~123~0
+10432464697~diana~ginecologia ~3122464696~0

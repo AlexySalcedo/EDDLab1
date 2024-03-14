@@ -141,14 +141,15 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         String fecc= fechita.format(formatter);
         String apel= setApellido.getText();
        
-
+        
         Pacientes pa = new Pacientes(ide,name,apel,espe,"juan",fecc);
+        if ((ide >10000000)){
         this.paciente.add(pa);
         if (sw == true){
         this.tblPacientesAgr.setItems(paciente);
         this.pacien.Adicionar(pa);
         }
-        
+        }
         } catch(Exception e) {
             JOptionPane.showMessageDialog(null, "No se pudo agregar el contacto\nVerifique los datos ingresados", "ERROR", 0);
         }
