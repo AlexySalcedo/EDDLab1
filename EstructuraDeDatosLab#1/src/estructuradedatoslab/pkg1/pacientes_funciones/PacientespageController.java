@@ -121,9 +121,7 @@ Archivo_pacientes pacien = new Archivo_pacientes();
 
     @FXML
     private void btnAgregarCita(ActionEvent event) {
-        boolean sw = true; 
         pn.setCenter(pc);
-        if (sw == true)
         this.tblPacientesAgr.setItems(paciente);
     }
 
@@ -141,12 +139,10 @@ Archivo_pacientes pacien = new Archivo_pacientes();
        
 
         Pacientes pa = new Pacientes(ide,name,apel,espe,"juan",fecc);
-    
-
-        sw = this.pacien.Adicionar(pa); 
-        if (sw == true){       
-            this.paciente.add(pa);
-            this.tblPacientesAgr.setItems(paciente);
+        this.paciente.add(pa);
+        if (sw == true){
+        this.tblPacientesAgr.setItems(paciente);
+        this.pacien.Adicionar(pa);
         }
         
         } catch(Exception e) {
