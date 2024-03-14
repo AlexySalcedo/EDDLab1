@@ -6,7 +6,13 @@
 =======
 222~Juan~Cardiologo~3182~0
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> b993629f7bf8f560e1bca0b37556e248e8a394f1
+=======
+1002~Diana~Medicina ~32067~0
+10~Diana~fisiterapia~312452~0
+10422464696~Diana~Oftalmologia~123~0
+>>>>>>> parent of b993629 (all)
 =======
 1002~Diana~Medicina ~32067~0
 10~Diana~fisiterapia~312452~0
