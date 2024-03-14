@@ -63,7 +63,6 @@ public class PacientespageController implements Initializable {
     private TableColumn colFechaCita;
     @FXML
     private TableColumn colMedicoAsignado;
-    @FXML
     private ObservableList <Pacientes> paciente;
     @FXML
     private TableColumn colApellido;
