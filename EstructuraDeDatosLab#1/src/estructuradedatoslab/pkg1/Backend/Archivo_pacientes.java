@@ -95,6 +95,10 @@ public class Archivo_pacientes {
                 if (p.get(i).getCedula() != c) {
                     bw.write(p.get(i).getDatos() + "\n");
                 }
+                else{
+                    ArchivoMedicos m = new ArchivoMedicos();
+                    m.Disminuir(p.get(i).getMedicoAsignado());
+                }
             }
             bw.flush();
             bw.close();
@@ -113,6 +117,9 @@ public class Archivo_pacientes {
                for (int i =0;i<p.size(); i++){
                 if ((p.get(i).getCedula() != c) && !(p.get(i).getEspecialidadMedica().equals(es))) {
                     bw.write(p.get(i).getDatos() + "\n");
+                }else{
+                    ArchivoMedicos m = new ArchivoMedicos();
+                    m.Disminuir(p.get(i).getMedicoAsignado());
                 }
             }
             bw.flush();

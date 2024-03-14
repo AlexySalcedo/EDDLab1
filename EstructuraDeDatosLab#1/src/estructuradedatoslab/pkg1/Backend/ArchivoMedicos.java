@@ -14,6 +14,9 @@ import java.util.List;
 import java.util.Set;
 
 public class ArchivoMedicos {
+    
+    public void ArchivoMedicos(){
+    }
 
     File archivoM = new File("ArchivoMedicos.txt");
 
@@ -212,11 +215,9 @@ public class ArchivoMedicos {
     } 
     
     //Quitar una cita 
-    //Agregar cita 
-    public boolean Eliminar1(String el) {
+    public void Disminuir(String el) {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
         m = Leer();
-        boolean sw= false;
         try {
             FileWriter fw = new FileWriter("ArchivoMedicos.txt", false);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -226,10 +227,7 @@ public class ArchivoMedicos {
                 }
                 else {
                     int n = m.get(i).getCita();
-                    if (n < 10){
-                        m.get(i).setCita(n+1);
-                        sw = true;
-                    }
+                        m.get(i).setCita(n-1);
                     bw.write(m.get(i).getDatos() + "\n");
                 }
             }
@@ -238,7 +236,6 @@ public class ArchivoMedicos {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        return sw;
     } 
     
     
