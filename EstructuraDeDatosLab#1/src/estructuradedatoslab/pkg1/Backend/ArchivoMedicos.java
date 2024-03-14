@@ -30,9 +30,17 @@ public class ArchivoMedicos {
     }
 
     //AGREGAR MEDICOS
-    public void Añadir(Medicos med) {
+    public boolean Adicionar(Medicos med) {
+        ArrayList<Medicos> m = new ArrayList<Medicos>();
+        m=Consultar(med.getIdentificacion());
+        boolean sw=true;
+        for (int i = 0; i < m.size(); i++) {
+            if ((m.get(i).getIdentificacion() == med.getIdentificacion())) {
+                    sw = false;
+            }
+        }
+        if (sw == true){
         try {
-
             FileWriter fw = new FileWriter("ArchivoMedicos.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(med.getDatos() + "\n");
@@ -41,6 +49,8 @@ public class ArchivoMedicos {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+        }
+        return sw;
     }
 
     //LEER MEDICOS
