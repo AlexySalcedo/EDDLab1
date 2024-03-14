@@ -2,6 +2,7 @@
 12323134~Jose~camilo~Cardiologo~juan~24 marzo 2024
 1331311221~and~ssdd~fisiterapia~juan~09 marzo 2024
 <<<<<<< HEAD
+<<<<<<< HEAD
 10422464696~Andrea ~Gonzales~Cardiologo~juan~14 March 2024
 10244265673~Angela~Pausini~Cardiologo~juan~15 March 2024
 11834753290~Maria Angel~Correa~Cardiologo~juan~16 March 2024
@@ -11,3 +12,5 @@
 =======
 122022103~carla~cama~Medicina~juan~14 marzo 2024
 >>>>>>> b993629f7bf8f560e1bca0b37556e248e8a394f1
+=======
+>>>>>>> parent of b993629 (all)

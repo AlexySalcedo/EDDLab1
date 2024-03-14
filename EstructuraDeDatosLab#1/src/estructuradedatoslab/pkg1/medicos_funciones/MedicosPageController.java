@@ -12,8 +12,6 @@ import estructuradedatoslab.pkg1.VistaPrincipalController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,8 +26,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -66,10 +62,6 @@ public class MedicosPageController implements Initializable {
     private ObservableList <Medicos> medico;
     
     ArchivoMedicos medi= new ArchivoMedicos();
-    @FXML
-    private BorderPane pt;
-    @FXML
-    private Pane cp;
 
     /**
      * Initializes the controller class.
@@ -127,26 +119,6 @@ public class MedicosPageController implements Initializable {
         stage.setScene(scene);
         stage.show();
         Main.cerrar(event);
-    }
-
-    @FXML
-    private void btnañadirmedicos(ActionEvent event) {
-        pt.setCenter(cp);
-    }
-
-    @FXML
-    private void btnconsultamed(ActionEvent event) {
-        loadpage("/estructuradedatoslab/pkg1/medicos_funciones/btnConsultarmed.fxml");
-    }
-     private void loadpage(String page){
-       Parent root= null;
-        try {
-            root=FXMLLoader.load(getClass().getResource(page));
-        } catch (IOException ex) {
-            Logger.getLogger(VistaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       pt.setCenter(root);
-       
     }
     
 }
