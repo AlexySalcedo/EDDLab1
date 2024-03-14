@@ -14,6 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -26,10 +28,12 @@ public class InterfazController implements Initializable {
 
     @FXML
     private Button btnIngresar;
-
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private TextField user;
+    @FXML
+    private PasswordField password;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -37,6 +41,13 @@ public class InterfazController implements Initializable {
 
     @FXML
     private void clickIngresar(ActionEvent event) throws IOException {
+        String usuario="Diana_Carolina";
+        String usuario1="Mei_Ching";
+        String usuario2="Alexy_Salcedo";
+        String contraseña= "123";
+        String val=user.getText();
+        String contra=password.getText();
+        if((val.equals(usuario)||val.equals(usuario1)||val.equals(usuario2))&&(contra.equals(contraseña))){
         FXMLLoader ld= new FXMLLoader(getClass().getResource("VistaPrincipal.fxml"));
         Parent root = ld.load();
         VistaPrincipalController controlador = ld.getController();
@@ -46,6 +57,9 @@ public class InterfazController implements Initializable {
         stage.setScene(scene);
         stage.show();
         Main.cerrar(event);
+        }else{
+            user.setText("Contraseña o usuario incorrecto");
+        }
         
     }
     

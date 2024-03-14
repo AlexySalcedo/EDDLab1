@@ -10,6 +10,9 @@ import estructuradedatoslab.pkg1.Main;
 import estructuradedatoslab.pkg1.VistaPrincipalController;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import static java.time.temporal.TemporalQueries.localDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -66,15 +69,19 @@ public class PacientespageController implements Initializable {
     private ObservableList <Pacientes> paciente;
     @FXML
     private TableColumn colApellido;
+    @FXML
+    private ChoiceBox<?> SelcMedicos;
+    @FXML
+    private TextField setApellido;
     
-
+Archivo_pacientes pacien = new Archivo_pacientes();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Archivo_pacientes pepa = new Archivo_pacientes();
-        paciente = FXCollections.observableList(pepa.Leer());
+        
+        paciente = FXCollections.observableList(pacien.Leer());
         this.colIdentificacion.setCellValueFactory(new PropertyValueFactory("cedula"));
         this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colFechaCita.setCellValueFactory(new PropertyValueFactory("fecha"));
@@ -82,7 +89,9 @@ public class PacientespageController implements Initializable {
         this.colEspecialidad.setCellValueFactory(new PropertyValueFactory("especialidadMedica"));
         this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
         this.setespecialidad.setItems(FXCollections.observableArrayList("Neurologia","Medicina General", "Pediatria", "Cardiologia"));
-    }    
+    } 
+    
+    
 
     @FXML
     private void back(ActionEvent event) throws IOException {
@@ -123,13 +132,18 @@ public class PacientespageController implements Initializable {
         String name = setNombre.getText();
         long ide = Long.parseLong(setIdentificacion.getText());
         String espe = setespecialidad.getValue();
-        String fecc= String.valueOf(setFecha.getValue());
+        LocalDate fechita = setFecha.getValue();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+        
+        String fecc= fechita.format(formatter);
+        String apel= setApellido.getText();
        
         
         
-        Pacientes pa = new Pacientes(ide,name,"perez",espe,"juan",fecc);
+        Pacientes pa = new Pacientes(ide,name,apel,espe,"juan",fecc);
         this.paciente.add(pa);
-        this.tblPacientesAgr.setItems (paciente) ;
+        this.tblPacientesAgr.setItems(paciente);
+        this.pacien.Adicionar(pa);
         
         
         
