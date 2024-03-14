@@ -162,5 +162,5 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         
     }
 
-    
-}
+
+    }

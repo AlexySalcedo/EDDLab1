@@ -4,9 +4,29 @@
  */
 package estructuradedatoslab.pkg1.medicos_funciones;
 
+import estructuradedatoslab.pkg1.Backend.ArchivoMedicos;
+import estructuradedatoslab.pkg1.Backend.Medicos;
+import estructuradedatoslab.pkg1.Backend.Pacientes;
+import estructuradedatoslab.pkg1.Main;
+import estructuradedatoslab.pkg1.VistaPrincipalController;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -15,12 +35,81 @@ import javafx.fxml.Initializable;
  */
 public class MedicosPageController implements Initializable {
 
+    @FXML
+    private TableView<Medicos> tblMedicosAg;
+    @FXML
+    private TableColumn identificacion;
+    @FXML
+    private TableColumn nombre;
+    @FXML
+    private TableColumn telefono;
+    @FXML
+    private TableColumn especialidad;
+    @FXML
+    private TableColumn numerodecitas;
+    @FXML
+    private TextField setNombre;
+    @FXML
+    private TextField setTelefono;
+    @FXML
+    private TextField setIdentificacion;
+    @FXML
+    private TextField setEspecialidad;
+    @FXML
+    private Button abrirConsulta;
+    
+    private ObservableList <Medicos> medico;
+    
+    ArchivoMedicos medi= new ArchivoMedicos();
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+         medico = FXCollections.observableList(medi.Leer());
+        this.identificacion.setCellValueFactory(new PropertyValueFactory("identificacion"));
+        this.nombre.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.telefono.setCellValueFactory(new PropertyValueFactory("telefono"));
+        this.numerodecitas.setCellValueFactory(new PropertyValueFactory("cita"));
+        this.especialidad.setCellValueFactory(new PropertyValueFactory("especialidadMedica"));
+        
+        
+        this.tblMedicosAg.setItems(medico);
+        
     }    
+
+    @FXML
+    private void btnIngresar(ActionEvent event) {
+        try{
+        String nombre = setNombre.getText();
+        String especialidad = setEspecialidad.getText();
+        int telefono = Integer.parseInt(setTelefono.getText());
+       
+        long id= Long.parseLong(setIdentificacion.getText());
+        Medicos m= new Medicos( id, nombre,  especialidad,  telefono);
+         this.medico.add(m);
+         this.tblMedicosAg.setItems(medico);
+         medi.Añadir(m);
+        }catch(Exception e){
+            System.out.println("Mala esa");
+        }
+        
+        
+                
+    }
+
+    @FXML
+    private void salir(ActionEvent event) throws IOException {
+        FXMLLoader ld= new FXMLLoader(getClass().getResource("/estructuradedatoslab/pkg1/VistaPrincipal.fxml"));
+        Parent root = ld.load();
+        VistaPrincipalController controlador = ld.getController();
+        Scene scene = new Scene(root);
+        Stage stage= new Stage();
+   
+        stage.setScene(scene);
+        stage.show();
+        Main.cerrar(event);
+    }
     
 }
