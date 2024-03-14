@@ -47,23 +47,25 @@ public class PacientespageController implements Initializable {
     @FXML
     private TextField setIdentificacion;
     @FXML
-    private TextField setespecialidad;
+    private ChoiceBox<String> setespecialidad;
     @FXML
     private DatePicker setFecha;
     @FXML
     private TableView<Pacientes> tblPacientesAgr;
     @FXML
-    private TableColumn<?, ?> colIdentificacion;
+    private TableColumn colIdentificacion;
     @FXML
-    private TableColumn<?, ?> colNombre;
+    private TableColumn  colNombre;
     @FXML
-    private TableColumn<?, ?> colEspecialidad;
+    private TableColumn colEspecialidad;
     @FXML
-    private TableColumn<?, ?> colFechaCita;
+    private TableColumn colFechaCita;
     @FXML
-    private TableColumn<?, ?> colMedicoAsignado;
+    private TableColumn colMedicoAsignado;
     
     private ObservableList <Pacientes> paciente;
+    @FXML
+    private TableColumn colApellido;
     
 
     /**
@@ -73,11 +75,13 @@ public class PacientespageController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         Archivo_pacientes pepa = new Archivo_pacientes();
         paciente = FXCollections.observableList(pepa.Leer());
-        this.colIdentificacion.setCellFactory(new PropertyValueFactory("cedula"));
-        this.colNombre.setCellFactory(new PropertyValueFactory("nombre"));
-        this.colFechaCita.setCellFactory(new PropertyValueFactory("fecha"));
-        this.colMedicoAsignado.setCellFactory(new PropertyValueFactory("nombre"));
-        this.colEspecialidad.setCellFactory(new PropertyValueFactory("especialidadMedica"));
+        this.colIdentificacion.setCellValueFactory(new PropertyValueFactory("cedula"));
+        this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.colFechaCita.setCellValueFactory(new PropertyValueFactory("fecha"));
+        this.colMedicoAsignado.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.colEspecialidad.setCellValueFactory(new PropertyValueFactory("especialidadMedica"));
+        this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
+        this.setespecialidad.setItems(FXCollections.observableArrayList("Neurologia","Medicina General", "Pediatria", "Cardiologia"));
     }    
 
     @FXML
@@ -118,11 +122,12 @@ public class PacientespageController implements Initializable {
         try {
         String name = setNombre.getText();
         long ide = Long.parseLong(setIdentificacion.getText());
-        String espe = setespecialidad.getText();
-        String fec= "03042024";
+        String espe = setespecialidad.getValue();
+        String fecc= setFecha.getValue();
+       
         
         
-        Pacientes pa = new Pacientes(ide,name,"perez",espe,11,fec);
+        Pacientes pa = new Pacientes(ide,name,"perez",espe,"juan",fecc);
         this.paciente.add(pa);
         this.tblPacientesAgr.setItems (paciente) ;
         
@@ -130,7 +135,7 @@ public class PacientespageController implements Initializable {
         
         
         } catch(NumberFormatException e) {
-            
+            System.out.println("Error aca bb revisa");
         }
         
         
