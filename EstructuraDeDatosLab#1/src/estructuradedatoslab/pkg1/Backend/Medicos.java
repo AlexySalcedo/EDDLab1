@@ -1,8 +1,7 @@
 
 package estructuradedatoslab.pkg1.Backend;
 
-public class Medicos {
-    
+public class Medicos {  
     long  identificacion;
     String nombre, especialidad;
     int telefono, cita;
