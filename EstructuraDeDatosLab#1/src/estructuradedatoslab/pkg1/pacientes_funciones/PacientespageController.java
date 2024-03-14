@@ -121,9 +121,7 @@ Archivo_pacientes pacien = new Archivo_pacientes();
 
     @FXML
     private void btnAgregarCita(ActionEvent event) {
-        boolean sw = true; 
         pn.setCenter(pc);
-        if (sw == true)
         this.tblPacientesAgr.setItems(paciente);
     }
 

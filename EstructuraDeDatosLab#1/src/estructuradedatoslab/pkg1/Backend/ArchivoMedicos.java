@@ -123,7 +123,7 @@ public class ArchivoMedicos {
     }
 
     //ELIMINAR UNA CITA DE MEDICOS
-    public void Eliminar2(long el1, String espe) {
+    /*public void Eliminar2(long el1, String espe) {
         try {
             File ff = new File("ArchivoMedicos.txt");
             FileWriter fw = new FileWriter(ff);
@@ -139,7 +139,7 @@ public class ArchivoMedicos {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-    }
+    }*/
 
     //Listar medicos por especialidad 
     public List<String> obMed(String es) {
