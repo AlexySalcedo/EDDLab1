@@ -138,7 +138,7 @@ public class ArchivoMedicos {
         }
     }
 
-    //MEDICO
+    //Listar medicos por especialidad 
     public List<String> obMed(String es) {
         List<String> medicos = new ArrayList<>();
         try {
@@ -151,7 +151,7 @@ public class ArchivoMedicos {
                 String nombreM = c[1].trim();
                 String espe = c[2].trim();
                 int cit = Integer.parseInt(c[4].trim());
-                if (espe == es) {
+                if (espe.equals(es)) {
                     if (cit <= 10) {
                         if (!medicos.contains(nombreM)) {
                             medicos.add(nombreM);
@@ -209,6 +209,36 @@ public class ArchivoMedicos {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    } 
+    
+    //Quitar una cita 
+    //Agregar cita 
+    public boolean Eliminar1(String el) {
+        ArrayList<Medicos> m = new ArrayList<Medicos>();
+        m = Leer();
+        boolean sw= false;
+        try {
+            FileWriter fw = new FileWriter("ArchivoMedicos.txt", false);
+            BufferedWriter bw = new BufferedWriter(fw);
+            for (int i = 0; i < m.size(); i++) {
+                if (!(m.get(i).getNombre().equals(el))) {
+                    bw.write(m.get(i).getDatos() + "\n");
+                }
+                else {
+                    int n = m.get(i).getCita();
+                    if (n < 10){
+                        m.get(i).setCita(n+1);
+                        sw = true;
+                    }
+                    bw.write(m.get(i).getDatos() + "\n");
+                }
+            }
+            bw.flush();
+            bw.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return sw;
     } 
     
     
