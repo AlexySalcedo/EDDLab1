@@ -5,6 +5,7 @@
 package estructuradedatoslab.pkg1.paginasDelView;
 
 import estructuradedatoslab.pkg1.Main;
+import estructuradedatoslab.pkg1.medicos_funciones.MedicosPageController;
 import estructuradedatoslab.pkg1.pacientes_funciones.PacientespageController;
 import java.io.IOException;
 import java.net.URL;
@@ -53,7 +54,17 @@ public class PersonasYmedicosController implements Initializable {
         
     }
 
+    @FXML
     private void abrirMedicos(ActionEvent event) throws IOException {
+        FXMLLoader ld= new FXMLLoader(getClass().getResource("/estructuradedatoslab/pkg1/medicos_funciones/MedicosPage.fxml"));
+        Parent root = ld.load();
+       MedicosPageController controlador = ld.getController();
+        Scene scene = new Scene(root);
+        Stage stage= new Stage();
+   
+        stage.setScene(scene);
+        stage.show();
+        Main.cerrar(event);
         
         
     }

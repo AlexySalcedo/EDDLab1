@@ -20,17 +20,17 @@
                   <String fx:value="backgroundColor2" />
                </styleClass>
                <children>
-                  <Button ellipsisString="" mnemonicParsing="false" onAction="#abrirPacientes" prefHeight="656.0" prefWidth="452.0" style="-fx-background-color: transparente;" />
-                  <ImageView fitHeight="621.0" fitWidth="443.0" layoutX="5.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Image/medica-2.png" />
-                     </image>
-                  </ImageView>
                   <Label alignment="CENTER" layoutX="79.0" layoutY="9.0" prefHeight="122.0" prefWidth="289.0" text="PACIENTES">
                      <font>
                         <Font name="Avenir Black" size="42.0" />
                      </font>
                   </Label>
+                  <ImageView fitHeight="621.0" fitWidth="443.0" layoutX="5.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Image/medica-2.png" />
+                     </image>
+                  </ImageView>
+                  <Button ellipsisString="" mnemonicParsing="false" onAction="#abrirPacientes" prefHeight="656.0" prefWidth="452.0" style="-fx-background-color: transparente;" />
                </children>
                <stylesheets>
                   <URL value="@background.css" />
@@ -43,7 +43,6 @@
                   <String fx:value="backgroundColor2" />
                </styleClass>
                <children>
-                  <Button ellipsisString="" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="662.0" prefWidth="455.0" style="-fx-background-color: transparente;" />
                   <ImageView fitHeight="509.0" fitWidth="455.0" layoutX="4.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Image/medica-3.png" />
@@ -54,6 +53,7 @@
                         <Font name="Avenir Black" size="42.0" />
                      </font>
                   </Label>
+                  <Button ellipsisString="" layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" onAction="#abrirMedicos" prefHeight="662.0" prefWidth="455.0" style="-fx-background-color: transparente;" />
                </children>
             </Pane>
          </children></Pane>

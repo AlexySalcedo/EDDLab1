@@ -48,6 +48,7 @@ public class PacientespageController implements Initializable {
     private TextField setIdentificacion;
     @FXML
     private ChoiceBox<String> setespecialidad;
+    @FXML
     private DatePicker setFecha;
     @FXML
     private TableView<Pacientes> tblPacientesAgr;
@@ -57,6 +58,7 @@ public class PacientespageController implements Initializable {
     private TableColumn  colNombre;
     @FXML
     private TableColumn colEspecialidad;
+    @FXML
     private TableColumn colFechaCita;
     @FXML
     private TableColumn colMedicoAsignado;
@@ -64,11 +66,12 @@ public class PacientespageController implements Initializable {
     private ObservableList <Pacientes> paciente;
     @FXML
     private TableColumn colApellido;
+    @FXML
     private TextField setApellido;
     
 Archivo_pacientes pacien = new Archivo_pacientes();
     @FXML
-    private TextField setTelefono;
+    private ChoiceBox<?> SelcMedicos;
     /**
      * Initializes the controller class.
      */
@@ -125,6 +128,7 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         this.tblPacientesAgr.setItems(paciente);
     }
 
+    @FXML
     private void btnAñadirCita(ActionEvent event) {
         try {
         boolean sw = true;    
@@ -158,7 +162,5 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         
     }
 
-    @FXML
-    private void bgnAgregarMedico(ActionEvent event) {
-    }
+    
 }
