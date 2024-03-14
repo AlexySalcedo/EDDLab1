@@ -97,10 +97,7 @@ public class MedicosPageController implements Initializable {
          }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "No se pudo agregar el contacto\nVerifique los datos ingresados", "ERROR", 0);
-        }
-        
-        
-                
+        }        
     }
 
     @FXML
