@@ -68,7 +68,12 @@ public class MedicosPageController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         medico = FXCollections.observableList(medi.Leer());
+        try {
+    medico = FXCollections.observableList(medi.Leer());
+} catch (Exception e) {
+    // Manejar la excepción aquí, por ejemplo, mostrar un mensaje de error al usuario
+            System.out.println("Error");
+}
         this.identificacion.setCellValueFactory(new PropertyValueFactory("identificacion"));
         this.nombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.telefono.setCellValueFactory(new PropertyValueFactory("telefono"));
