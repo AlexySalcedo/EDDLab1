@@ -59,6 +59,7 @@ public class BtnConsultarController implements Initializable {
         this.colMedicoAsignado.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colEspecialidad.setCellValueFactory(new PropertyValueFactory("especialidadMedica"));
         this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
+        
     }    
 
     @FXML
