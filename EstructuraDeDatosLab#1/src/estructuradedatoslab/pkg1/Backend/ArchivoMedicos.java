@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 public class ArchivoMedicos {
     
@@ -30,9 +31,18 @@ public class ArchivoMedicos {
     }
 
     //AGREGAR MEDICOS
-    public void Añadir(Medicos med) {
+    public boolean Adicionar(Medicos med) {
+        ArrayList<Medicos> m = new ArrayList<Medicos>();
+        m=Consultar(med.getIdentificacion());
+        boolean sw=true;
+        for (int i = 0; i < m.size(); i++) {
+            if ((m.get(i).getIdentificacion() == med.getIdentificacion())&& m.get(i).getEspecialidad().equals(med.getEspecialidad())) {
+                    sw = false;
+                    JOptionPane.showMessageDialog(null, "Ese medico ya esta registrado", "ERROR", 0);
+            }
+        }
+        if (sw == true){
         try {
-
             FileWriter fw = new FileWriter("ArchivoMedicos.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(med.getDatos() + "\n");
@@ -41,6 +51,8 @@ public class ArchivoMedicos {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+        }
+        return sw;
     }
 
     //LEER MEDICOS
