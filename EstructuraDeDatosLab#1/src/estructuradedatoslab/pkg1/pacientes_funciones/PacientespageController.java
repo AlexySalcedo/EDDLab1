@@ -141,10 +141,10 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         String fecc= fechita.format(formatter);
         String apel= setApellido.getText();
        
-        
-        if (sw == true){
-            Pacientes pa = new Pacientes(ide,name,apel,espe,"juan",fecc);
+
+        Pacientes pa = new Pacientes(ide,name,apel,espe,"juan",fecc);
         this.paciente.add(pa);
+        if (sw == true){
         this.tblPacientesAgr.setItems(paciente);
         this.pacien.Adicionar(pa);
         }
