@@ -90,7 +90,7 @@ public class PacientespageController implements Initializable {
         this.colMedicoAsignado.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colEspecialidad.setCellValueFactory(new PropertyValueFactory("especialidadMedica"));
         this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
-        this.SelcMedicos.setItems(FXCollections.observableArrayList(medis.obEsp()));
+        
         setespecialidad.setOnAction(this::asi);
         
         
