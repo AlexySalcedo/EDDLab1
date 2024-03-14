@@ -2,11 +2,11 @@
 package estructuradedatoslab.pkg1.Backend;
 
 public class Medicos {  
-    long  identificacion;
+    long  identificacion,telefono;
     String nombre, especialidad;
-    int telefono, cita;
+    int cita;
     
-    public Medicos(long ide, String nom, String esp, int tel){
+    public Medicos(long ide, String nom, String esp, long tel){
         this.nombre = nom;
         this.identificacion = ide;
         this.especialidad = esp;
@@ -18,7 +18,7 @@ public class Medicos {
         this.identificacion = (Long.parseLong(rest[0].trim()));
         this.nombre = (rest[1]);
         this.especialidad = (rest[2]);
-        this.telefono = (Integer.parseInt(rest[3].trim()));
+        this.telefono = (Long.parseLong(rest[3].trim()));
         this.cita = (Integer.parseInt(rest[4].trim()));
     }
 
@@ -46,11 +46,11 @@ public class Medicos {
         this.especialidad = especialidad;
     }
 
-    public int getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
 

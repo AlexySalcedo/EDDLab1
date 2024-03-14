@@ -181,7 +181,7 @@ public class ArchivoMedicos {
         return medicos;
     }
     //Agregar cita 
-    public boolean AgregarC(String el) {
+    public boolean AgregarCita(String el) {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
         m = Leer();
         boolean sw= false;

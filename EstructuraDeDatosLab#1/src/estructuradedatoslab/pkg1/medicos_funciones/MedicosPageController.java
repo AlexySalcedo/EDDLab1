@@ -86,15 +86,19 @@ public class MedicosPageController implements Initializable {
         boolean sw = true;
         String nombre = setNombre.getText();
         String especialidad = setEspecialidad.getText();
-        int telefono = Integer.parseInt(setTelefono.getText());
+        long telefono = Long.parseLong(setTelefono.getText());
         long id= Long.parseLong(setIdentificacion.getText());
         
-        Medicos m= new Medicos( id, nombre,  especialidad,  telefono);
+        Medicos m= new Medicos( id, nombre,  especialidad, telefono);
+        if ((id >10000000) && (telefono > (1000000000))){
          this.medico.add(m);
          if (sw == true){
          this.tblMedicosAg.setItems(medico);
          this.medi.Adicionar(m);
          }
+        }else{
+            JOptionPane.showMessageDialog(null, "Error en dato", "ERROR", 0);
+        }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "No se pudo agregar el contacto\nVerifique los datos ingresados", "ERROR", 0);
         }        
