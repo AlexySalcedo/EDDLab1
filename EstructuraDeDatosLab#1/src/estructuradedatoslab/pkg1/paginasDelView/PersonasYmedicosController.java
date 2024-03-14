@@ -26,6 +26,7 @@ import javafx.stage.Stage;
  * @author alexysalcedo
  */
 public class PersonasYmedicosController implements Initializable {
+    PacientespageController pc= new PacientespageController();
 
     @FXML
     private AnchorPane fondo;
@@ -49,6 +50,7 @@ public class PersonasYmedicosController implements Initializable {
         stage.setScene(scene);
         stage.show();
         Main.cerrar(event);
+        pc.CargarTabla();
     }
     
 
