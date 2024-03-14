@@ -27,6 +27,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -82,6 +83,7 @@ public class MedicosPageController implements Initializable {
     @FXML
     private void btnIngresar(ActionEvent event) {
         try{
+        boolean sw = true;
         String nombre = setNombre.getText();
         String especialidad = setEspecialidad.getText();
         int telefono = Integer.parseInt(setTelefono.getText());
@@ -89,10 +91,12 @@ public class MedicosPageController implements Initializable {
         
         Medicos m= new Medicos( id, nombre,  especialidad,  telefono);
          this.medico.add(m);
+         if (sw == true){
          this.tblMedicosAg.setItems(medico);
          this.medi.Adicionar(m);
+         }
         }catch(Exception e){
-            System.out.println("Mala esa");
+            JOptionPane.showMessageDialog(null, "No se pudo agregar el contacto\nVerifique los datos ingresados", "ERROR", 0);
         }
         
         
