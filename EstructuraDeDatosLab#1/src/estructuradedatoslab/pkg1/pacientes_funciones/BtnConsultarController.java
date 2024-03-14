@@ -63,11 +63,9 @@ public class BtnConsultarController implements Initializable {
 
     @FXML
     private void buscar(ActionEvent event) {
-         String id= setId.getText();
-         long idc= Long.parseLong(id);
-         paciente = FXCollections.observableList(pacien.Consultar(idc));
+         long id= Long.parseLong(setId.getText());
+         paciente = FXCollections.observableList(pacien.Consultar(id));
          this.tblConsultar.setItems(paciente);
-         
          
     }
 
@@ -77,6 +75,10 @@ public class BtnConsultarController implements Initializable {
 
     @FXML
     private void eliminartodo(ActionEvent event) {
+        long id= Long.parseLong(setId.getText());
+        pacien.Eliminar(id);
+        paciente = FXCollections.observableList(pacien.Consultar(id));
+        this.tblConsultar.setItems(paciente);
     }
     
 }
