@@ -1,6 +1,7 @@
 
 package estructuradedatoslab.pkg1.pacientes_funciones;
 
+import estructuradedatoslab.pkg1.Backend.ArchivoMedicos;
 import estructuradedatoslab.pkg1.Backend.Archivo_pacientes;
 import estructuradedatoslab.pkg1.Backend.Pacientes;
 import estructuradedatoslab.pkg1.Main;
@@ -70,12 +71,14 @@ public class PacientespageController implements Initializable {
     private TextField setApellido;
     
 Archivo_pacientes pacien = new Archivo_pacientes();
+    ArchivoMedicos medis = new ArchivoMedicos();
     @FXML
-    private ChoiceBox<?> SelcMedicos;
+    private ChoiceBox<String> SelcMedicos;
     /**
      * Initializes the controller class.
      */
     @Override
+    
     public void initialize(URL url, ResourceBundle rb) {
         
         paciente = FXCollections.observableList(pacien.Leer());
@@ -85,10 +88,19 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         this.colMedicoAsignado.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.colEspecialidad.setCellValueFactory(new PropertyValueFactory("especialidadMedica"));
         this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
-        this.setespecialidad.setItems(FXCollections.observableArrayList("Neurologia","Medicina General", "Pediatria", "Cardiologia"));
+        this.setespecialidad.setItems(FXCollections.observableList(medis.obEsp()));
+        setespecialidad.setOnAction(this::asi);
+        
+        
+        
+        
         this.tblPacientesAgr.setItems(paciente);
     } 
-    
+    private void asi(ActionEvent event){
+        String x = setespecialidad.getValue();
+        
+        this.SelcMedicos.setItems(FXCollections.observableList(medis.obMed(x)));
+    }
         
         
     
@@ -121,6 +133,7 @@ Archivo_pacientes pacien = new Archivo_pacientes();
        pn.setCenter(root);
        
     }
+     
 
     @FXML
     private void btnAgregarCita(ActionEvent event) {

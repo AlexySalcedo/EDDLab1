@@ -1,1 +1,12 @@
+<<<<<<< HEAD
 10422464696~Diana~Garcia~Medicina General~juan~14 March 2024
+=======
+222~lol~dsd~Medicina General~juan~09 marzo 2024
+123~Juan~Paco~Neurologia~juan~01 marzo 2024
+123~juan~Gonzales~Cardiologia~juan~16 marzo 2024
+1234~Jose~Nasra~Neurologia~juan~16 marzo 2024
+1232~camilo~Gonzales~Medicina General~juan~08 marzo 2024
+111~jians~dada~Medicina General~juan~02 marzo 2024
+1233344~carlos~alberto~Cardiologia~juan~01 marzo 2024
+12323134~Jose~camilo~Cardiologo~juan~24 marzo 2024
+>>>>>>> 5fc11653c6cca20efcae480914a5dbc7a19697d1
