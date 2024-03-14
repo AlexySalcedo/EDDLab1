@@ -10,3 +10,6 @@
 1233344~carlos~alberto~Cardiologia~juan~01 marzo 2024
 12323134~Jose~camilo~Cardiologo~juan~24 marzo 2024
 >>>>>>> 5fc11653c6cca20efcae480914a5dbc7a19697d1
+104224646565~Diana ~Mercedez~ginecologia~juan~15 March 2024
+10422464696~Diana~Garcia~fisiterapia~juan~14 March 2024
+10422464696~Diana ~Garcia ~Medicina~juan~15 March 2024
