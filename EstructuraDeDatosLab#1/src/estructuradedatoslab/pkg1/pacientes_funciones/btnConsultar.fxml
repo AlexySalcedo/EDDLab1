@@ -20,14 +20,18 @@
                </font>
             </Label>
             <Pane layoutX="34.0" layoutY="10.0" prefHeight="9.0" prefWidth="880.0" style="-fx-background-radius: 30px;" styleClass="backgroundColor" stylesheets="@../background.css" />
-            <TextField layoutX="336.0" layoutY="109.0" prefHeight="26.0" prefWidth="179.0" />
-            <TableView layoutX="34.0" layoutY="149.0" prefHeight="437.0" prefWidth="880.0">
+            <TextField fx:id="setId" layoutX="336.0" layoutY="109.0" prefHeight="26.0" prefWidth="179.0" />
+            <TableView fx:id="tblConsultar" layoutX="34.0" layoutY="149.0" prefHeight="437.0" prefWidth="882.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="colIdentificacion" prefWidth="135.0" text="Identificacion" />
+                <TableColumn fx:id="colNombre" minWidth="0.0" prefWidth="179.0" text="Nombre" />
+                  <TableColumn fx:id="colApellido" prefWidth="87.010009765625" text="Apellido" />
+                  <TableColumn fx:id="colEspecialidad" prefWidth="182.49002075195312" text="Especialidad Solicitada" />
+                  <TableColumn fx:id="colMedicoAsignado" minWidth="8.21075439453125" prefWidth="157.59466552734375" text="Medico asignado" />
+                  <TableColumn fx:id="colFechaCita" prefWidth="139.0" text="Fecha de cita" />
               </columns>
             </TableView>
-            <Button layoutX="524.0" layoutY="107.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="116.0" style="-fx-background-radius: 20px;" styleClass="backgroundColor3" stylesheets="@../background.css" text="Ingresar" textFill="#656262">
+            <Button layoutX="524.0" layoutY="107.0" mnemonicParsing="false" onAction="#buscar" prefHeight="26.0" prefWidth="116.0" style="-fx-background-radius: 20px;" styleClass="backgroundColor3" stylesheets="@../background.css" text="Ingresar" textFill="#656262">
                <font>
                   <Font name="Arial Black" size="13.0" />
                </font>
@@ -37,12 +41,12 @@
                   <Font name="Avenir Next Regular" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="335.0" layoutY="612.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="116.0" style="-fx-background-radius: 20px;" styleClass="backgroundColor3" stylesheets="@../background.css" text="Eliminar" textFill="#656262">
+            <Button layoutX="335.0" layoutY="612.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="26.0" prefWidth="116.0" style="-fx-background-radius: 20px;" styleClass="backgroundColor3" stylesheets="@../background.css" text="Eliminar" textFill="#656262">
                <font>
                   <Font name="Arial Black" size="13.0" />
                </font>
             </Button>
-            <Button layoutX="502.0" layoutY="609.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="116.0" style="-fx-background-radius: 20px;" styleClass="backgroundColor3" stylesheets="@../background.css" text="Eliminar todo" textFill="#656262">
+            <Button layoutX="502.0" layoutY="609.0" mnemonicParsing="false" onAction="#eliminartodo" prefHeight="26.0" prefWidth="116.0" style="-fx-background-radius: 20px;" styleClass="backgroundColor3" stylesheets="@../background.css" text="Eliminar todo" textFill="#656262">
                <font>
                   <Font name="Arial Black" size="13.0" />
                </font>
