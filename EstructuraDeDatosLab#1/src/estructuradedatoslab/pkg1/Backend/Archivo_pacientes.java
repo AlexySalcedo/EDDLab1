@@ -122,7 +122,7 @@ public class Archivo_pacientes {
         }
     }
     
-    //Eliminar citas asignadas
+    //Eliminar citas por medico
     public void EliminarC(String name) {
         ArrayList<Pacientes> p = new ArrayList<Pacientes>();
         p=Leer();        
