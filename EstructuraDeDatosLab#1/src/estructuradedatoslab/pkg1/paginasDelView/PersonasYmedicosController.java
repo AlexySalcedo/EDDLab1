@@ -52,6 +52,11 @@ public class PersonasYmedicosController implements Initializable {
         Main.cerrar(event);
         
     }
+
+    private void abrirMedicos(ActionEvent event) throws IOException {
+        
+        
+    }
     
 
     

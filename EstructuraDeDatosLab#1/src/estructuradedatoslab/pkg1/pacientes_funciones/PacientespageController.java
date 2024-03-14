@@ -161,6 +161,6 @@ Archivo_pacientes pacien = new Archivo_pacientes();
     }
 
     @FXML
-    private void btnAñadirMedico(ActionEvent event) {
+    private void bgnAgregarMedico(ActionEvent event) {
     }
 }
