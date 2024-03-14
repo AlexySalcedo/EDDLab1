@@ -168,9 +168,6 @@ public class PacientespageController implements Initializable {
         this.tblPacientesAgr.setItems(paciente);
         this.pacien.Adicionar(pa);
         sw2 = medis.AgregarCita(nm);
-        if (sw2 == true ){
-            JOptionPane.showMessageDialog(null, "Valor incrementado", "ERROR", 0);
-        }
         }
         
         }else{
