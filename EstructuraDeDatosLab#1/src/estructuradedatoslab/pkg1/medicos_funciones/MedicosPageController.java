@@ -72,7 +72,7 @@ public class MedicosPageController implements Initializable {
         this.nombre.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.telefono.setCellValueFactory(new PropertyValueFactory("telefono"));
         this.numerodecitas.setCellValueFactory(new PropertyValueFactory("cita"));
-        this.especialidad.setCellValueFactory(new PropertyValueFactory("especialidadMedica"));
+        this.especialidad.setCellValueFactory(new PropertyValueFactory("especialidad"));
         
         
         this.tblMedicosAg.setItems(medico);
@@ -90,7 +90,7 @@ public class MedicosPageController implements Initializable {
         Medicos m= new Medicos( id, nombre,  especialidad,  telefono);
          this.medico.add(m);
          this.tblMedicosAg.setItems(medico);
-         this.medi.Leer();
+         this.medi.Adicionar(m);
         }catch(Exception e){
             System.out.println("Mala esa");
         }
