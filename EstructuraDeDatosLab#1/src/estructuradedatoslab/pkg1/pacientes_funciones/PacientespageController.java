@@ -4,6 +4,8 @@
  */
 package estructuradedatoslab.pkg1.pacientes_funciones;
 
+import estructuradedatoslab.pkg1.Backend.Archivo_pacientes;
+import estructuradedatoslab.pkg1.Backend.Pacientes;
 import estructuradedatoslab.pkg1.Main;
 import estructuradedatoslab.pkg1.VistaPrincipalController;
 import java.io.IOException;
@@ -11,12 +13,20 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -32,13 +42,46 @@ public class PacientespageController implements Initializable {
     private BorderPane pn;
     @FXML
     private Pane pc;
+    @FXML
+    private TextField setNombre;
+    @FXML
+    private TextField setIdentificacion;
+    @FXML
+    private ChoiceBox<String> setespecialidad;
+    @FXML
+    private DatePicker setFecha;
+    @FXML
+    private TableView<Pacientes> tblPacientesAgr;
+    @FXML
+    private TableColumn colIdentificacion;
+    @FXML
+    private TableColumn  colNombre;
+    @FXML
+    private TableColumn colEspecialidad;
+    @FXML
+    private TableColumn colFechaCita;
+    @FXML
+    private TableColumn colMedicoAsignado;
+    
+    private ObservableList <Pacientes> paciente;
+    @FXML
+    private TableColumn colApellido;
+    
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        Archivo_pacientes pepa = new Archivo_pacientes();
+        paciente = FXCollections.observableList(pepa.Leer());
+        this.colIdentificacion.setCellValueFactory(new PropertyValueFactory("cedula"));
+        this.colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.colFechaCita.setCellValueFactory(new PropertyValueFactory("fecha"));
+        this.colMedicoAsignado.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.colEspecialidad.setCellValueFactory(new PropertyValueFactory("especialidadMedica"));
+        this.colApellido.setCellValueFactory(new PropertyValueFactory("apellido"));
+        this.setespecialidad.setItems(FXCollections.observableArrayList("Neurologia","Medicina General", "Pediatria", "Cardiologia"));
     }    
 
     @FXML
@@ -72,5 +115,35 @@ public class PacientespageController implements Initializable {
     @FXML
     private void btnAgregarCita(ActionEvent event) {
         pn.setCenter(pc);
+    }
+
+    @FXML
+    private void btnAñadirCita(ActionEvent event) {
+        try {
+        String name = setNombre.getText();
+        long ide = Long.parseLong(setIdentificacion.getText());
+        String espe = setespecialidad.getValue();
+        String fecc= String.valueOf(setFecha.getValue());
+       
+        
+        
+        Pacientes pa = new Pacientes(ide,name,"perez",espe,"juan",fecc);
+        this.paciente.add(pa);
+        this.tblPacientesAgr.setItems (paciente) ;
+        
+        
+        
+        
+        } catch(NumberFormatException e) {
+            System.out.println("Error aca bb revisa");
+        }
+        
+        
+        
+        
+        
+        
+        
+        
     }
 }
