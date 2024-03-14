@@ -99,6 +99,10 @@ public class MedicosPageController implements Initializable {
         }else{
             JOptionPane.showMessageDialog(null, "Error en dato", "ERROR", 0);
         }
+        setNombre.setText(null);
+        setTelefono.setText(null);
+        setIdentificacion.setText(null);
+        setEspecialidad.setText(null);
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "No se pudo agregar el contacto\nVerifique los datos ingresados", "ERROR", 0);
         }        
