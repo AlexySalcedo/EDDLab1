@@ -85,12 +85,12 @@ public class MedicosPageController implements Initializable {
         String nombre = setNombre.getText();
         String especialidad = setEspecialidad.getText();
         int telefono = Integer.parseInt(setTelefono.getText());
-       
         long id= Long.parseLong(setIdentificacion.getText());
+        
         Medicos m= new Medicos( id, nombre,  especialidad,  telefono);
          this.medico.add(m);
          this.tblMedicosAg.setItems(medico);
-         medi.Añadir(m);
+         this.medi.Leer();
         }catch(Exception e){
             System.out.println("Mala esa");
         }
