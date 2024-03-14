@@ -153,6 +153,7 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         
         String fecc= fechita.format(formatter);
         String apel= setApellido.getText();
+        
        
         
         Pacientes pa = new Pacientes(ide,name,apel,espe,"juan",fecc);
