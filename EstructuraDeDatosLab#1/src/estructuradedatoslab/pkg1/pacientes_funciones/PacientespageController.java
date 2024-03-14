@@ -123,7 +123,7 @@ public class PacientespageController implements Initializable {
         String name = setNombre.getText();
         long ide = Long.parseLong(setIdentificacion.getText());
         String espe = setespecialidad.getValue();
-        String fecc= setFecha.getValue();
+        String fecc= String.valueOf(setFecha.getValue());
        
         
         

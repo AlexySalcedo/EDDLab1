@@ -148,7 +148,7 @@ public class Archivo_pacientes {
         p1.setNombre("DDD");
         p1.setApellido("gGGGG");
         p1.setEspecialidadMedica("ddteo");
-        p1.setMedicoAsignado("arturo");
+        p1.setMedicoAsignado("arturo"   );
         p1.setFecha("5/11/2024");
         Archivo_pacientes ar = new Archivo_pacientes();
     
