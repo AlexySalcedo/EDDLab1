@@ -70,8 +70,11 @@ public class PacientespageController implements Initializable {
     @FXML
     private TextField setApellido;
     
-Archivo_pacientes pacien = new Archivo_pacientes();
+    Archivo_pacientes pacien = new Archivo_pacientes();
     ArchivoMedicos medis = new ArchivoMedicos();
+    
+    
+    
     @FXML
     private ChoiceBox<String> SelcMedicos;
     /**
@@ -144,7 +147,9 @@ Archivo_pacientes pacien = new Archivo_pacientes();
     @FXML
     private void btnAñadirCita(ActionEvent event) {
         try {
-        boolean sw = true;    
+        boolean sw = true;  
+        boolean sw2 = false;
+        String nm = SelcMedicos.getValue();
         String name = setNombre.getText();
         long ide = Long.parseLong(setIdentificacion.getText());
         String espe = setespecialidad.getValue();
@@ -155,13 +160,20 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         String apel= setApellido.getText();
        
         
-        Pacientes pa = new Pacientes(ide,name,apel,espe,"juan",fecc);
+        Pacientes pa = new Pacientes(ide,name,apel,espe,nm,fecc);
         if ((ide >10000000)){
-        this.paciente.add(pa);
+        sw = this.paciente.add(pa);
         if (sw == true){
         this.tblPacientesAgr.setItems(paciente);
         this.pacien.Adicionar(pa);
+        sw2 = medis.AgregarCita(nm);
+        if (sw2 == true ){
+            JOptionPane.showMessageDialog(null, "Valor incrementado", "ERROR", 0);
         }
+        }
+        
+        }else{
+            JOptionPane.showMessageDialog(null, "Error en dato", "ERROR", 0);
         }
         } catch(Exception e) {
             JOptionPane.showMessageDialog(null, "No se pudo agregar el contacto\nVerifique los datos ingresados", "ERROR", 0);

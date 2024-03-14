@@ -4,6 +4,7 @@
  */
 package estructuradedatoslab.pkg1.pacientes_funciones;
 
+import estructuradedatoslab.pkg1.Backend.ArchivoMedicos;
 import estructuradedatoslab.pkg1.Backend.Archivo_pacientes;
 import estructuradedatoslab.pkg1.Backend.Pacientes;
 import java.net.URL;
@@ -48,6 +49,7 @@ public class BtnConsultarController implements Initializable {
      */
     
     Archivo_pacientes pacien = new Archivo_pacientes();
+     ArchivoMedicos medis = new ArchivoMedicos();
     @FXML
     private TableColumn<?, ?> colFechaCita;
     @Override

@@ -134,24 +134,6 @@ public class ArchivoMedicos {
         }
     }
 
-    //ELIMINAR UNA CITA DE MEDICOS
-    public void Eliminar2(long el1, String espe) {
-        try {
-            File ff = new File("ArchivoMedicos.txt");
-            FileWriter fw = new FileWriter(ff);
-            BufferedWriter bw = new BufferedWriter(fw);
-            List<String> l = new ArrayList<>();
-            l = Files.readAllLines(Paths.get(ff.getPath()));
-            for (String linea : l) {
-                Medicos med = new Medicos();
-                if (!(med.getIdentificacion() == el1 && med.getEspecialidad() == espe)) {
-                    bw.write(linea + "\n");
-                }
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
 
     //Listar medicos por especialidad 
     public List<String> obMed(String es) {
