@@ -1,1 +1,16 @@
+<<<<<<< HEAD
 10422464696~Diana~Garcia ~neuro~Juan~15 March 2024
+=======
+<<<<<<< HEAD
+=======
+1233344~carlos~alberto~Cardiologia~juan~01 marzo 2024
+12323134~Jose~camilo~Cardiologo~juan~24 marzo 2024
+1331311221~and~ssdd~fisiterapia~juan~09 marzo 2024
+10422464696~Andrea ~Gonzales~Cardiologo~juan~14 March 2024
+10244265673~Angela~Pausini~Cardiologo~juan~15 March 2024
+11834753290~Maria Angel~Correa~Cardiologo~juan~16 March 2024
+10222464698~Diana ~Angel~fisiterapia~juan~28 March 2024
+10422463696~Josue~Perez~Oftalmologia~nm~23 March 2024
+12345678908~Juan~Antonio~Cardiologo~Juan~28 March 2024
+>>>>>>> parent of b34ecc5 (.)
+>>>>>>> d6a61d78b8a13d04a91e29363ef549e50d79a9fc
