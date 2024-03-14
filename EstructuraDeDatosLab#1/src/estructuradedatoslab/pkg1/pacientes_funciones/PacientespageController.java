@@ -29,6 +29,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -130,7 +131,7 @@ Archivo_pacientes pacien = new Archivo_pacientes();
     @FXML
     private void btnAñadirCita(ActionEvent event) {
         try {
-            
+        boolean sw = true;    
         String name = setNombre.getText();
         long ide = Long.parseLong(setIdentificacion.getText());
         String espe = setespecialidad.getValue();
@@ -141,17 +142,19 @@ Archivo_pacientes pacien = new Archivo_pacientes();
         String apel= setApellido.getText();
        
         
-        
-        Pacientes pa = new Pacientes(ide,name,apel,espe,"juan",fecc);
+        if (sw == true){
+            Pacientes pa = new Pacientes(ide,name,apel,espe,"juan",fecc);
         this.paciente.add(pa);
         this.tblPacientesAgr.setItems(paciente);
         this.pacien.Adicionar(pa);
+        }
+        
         
         
         
         
         } catch(Exception e) {
-            System.out.println("Error aca bb revisa");
+            JOptionPane.showMessageDialog(null, "No se pudo agregar el contacto\nVerifique los datos ingresados", "ERROR", 0);
         }
         
         
