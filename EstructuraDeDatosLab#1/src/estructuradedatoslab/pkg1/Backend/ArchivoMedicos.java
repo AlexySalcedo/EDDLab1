@@ -60,14 +60,14 @@ public class ArchivoMedicos {
     }
 
     //ESPECIALIDADES
-    public List<String> obEsp() {
-        List<String> especialidades = new ArrayList<>();
+    public ArrayList<String> obEsp() {
+        ArrayList<String> especialidades = new ArrayList<>();
         try {
-            FileReader fr = new FileReader(archivoM);
+            FileReader fr = new FileReader("ArchivoMedicos.txt");
             BufferedReader br = new BufferedReader(fr);
             String linea;
             while ((linea = br.readLine()) != null) {
-                String[] c = linea.split("-");
+                String[] c = linea.split("~");
                 String especialidad = c[2].trim();
                 if (!especialidades.contains(especialidad)) {
                     especialidades.add(especialidad);
@@ -80,10 +80,9 @@ public class ArchivoMedicos {
         return especialidades;
     }
 
-    //CONSULTAR MEDICO
+    //CONSULTAR MEDICO (por cedula)
     public ArrayList<Medicos> Consultar(long c) {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
-        int i = 0;
         try {
             File f = new File("ArchivoMedicos.txt");
             FileReader fr = new FileReader(f);
@@ -102,14 +101,14 @@ public class ArchivoMedicos {
     }
 
     //ELIMINAR LAS CITAS DE UN MEDICO
-    public void Eliminar1(long el) {
+    public void Eliminar1(String el) {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
         m = Leer();
         try {
             FileWriter fw = new FileWriter("ArchivoMedicos.txt", false);
             BufferedWriter bw = new BufferedWriter(fw);
             for (int i = 0; i < m.size(); i++) {
-                if (m.get(i).getIdentificacion() != el) {
+                if (!(m.get(i).getNombre().equals(el))) {
                     bw.write(m.get(i).getDatos() + "\n");
                 }
             }
@@ -166,23 +165,51 @@ public class ArchivoMedicos {
         }
         return medicos;
     }
-
-    //Reiniciar el archivo medicos 
-    public static void main(String[] args) {
-        int n = 153;
-        Medicos m1 = new Medicos();
-        ArchivoMedicos am = new ArchivoMedicos();
-
-        am.crearArchivoM();
-
+    //Agregar cita 
+    public boolean AgregarC(String el) {
         ArrayList<Medicos> m = new ArrayList<Medicos>();
-        am.Eliminar1(n);
-        m = am.Leer();
-        for (int i = 0; i < m.size(); i++) {
-            System.out.println(m.get(i).getDatos() + "~");
+        m = Leer();
+        boolean sw= false;
+        try {
+            FileWriter fw = new FileWriter("ArchivoMedicos.txt", false);
+            BufferedWriter bw = new BufferedWriter(fw);
+            for (int i = 0; i < m.size(); i++) {
+                if (!(m.get(i).getNombre().equals(el))) {
+                    bw.write(m.get(i).getDatos() + "\n");
+                }
+                else {
+                    int n = m.get(i).getCita();
+                    if (n < 10){
+                        m.get(i).setCita(n+1);
+                        sw = true;
+                    }
+                    bw.write(m.get(i).getDatos() + "\n");
+                }
+            }
+            bw.flush();
+            bw.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
-    }
-
+        return sw;
+    } 
+    //Reiniciar citas
+        public void reiniciar() {
+        ArrayList<Medicos> m = new ArrayList<Medicos>();
+        m = Leer();
+        try {
+            FileWriter fw = new FileWriter("ArchivoMedicos.txt", false);
+            BufferedWriter bw = new BufferedWriter(fw);
+            for (int i = 0; i < m.size(); i++) {
+                m.get(i).setCita(0);     
+                bw.write(m.get(i).getDatos() + "\n");
+            }
+            bw.flush();
+            bw.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    } 
     
     
 }
