@@ -74,6 +74,7 @@ public class BtnConsultarController implements Initializable {
 
     @FXML
     private void eliminar(ActionEvent event) {
+        
     }
 
     @FXML

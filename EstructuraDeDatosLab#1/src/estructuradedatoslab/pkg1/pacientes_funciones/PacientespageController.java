@@ -168,6 +168,8 @@ public class PacientespageController implements Initializable {
         this.tblPacientesAgr.setItems(paciente);
         this.pacien.Adicionar(pa);
         sw2 = medis.AgregarCita(nm);
+        } else{
+             JOptionPane.showMessageDialog(null, "El dato identificacion no cumple con los parametros\nVerifique los datos ingresados", "ERROR", 0);
         }
         
         }else{
